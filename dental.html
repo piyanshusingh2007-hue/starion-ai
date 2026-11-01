@@ -400,10 +400,10 @@
     <!-- 1. HERO + LIVE DEMO CHAT -->
     <section class="py-16 sm:py-24 bg-white corporate-bg-pattern border-b border-[#e2e8f0]">
       <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div class="lg:col-span-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div id="starbot-col">
             <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-4">StarBot for dental practices</span>
-            <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#0a0e27] leading-[1.1] mb-5">
+            <h1 class="text-4xl sm:text-5xl lg:text-[44px] font-bold tracking-tight text-[#0a0e27] leading-[1.1] mb-5">
               Never miss another new-patient enquiry.
             </h1>
             <p class="text-[18px] sm:text-[20px] text-[#64748b] leading-[1.7] mb-8">
@@ -427,10 +427,8 @@
               <a href="#free-demo" class="btn-gold text-[16px] px-8 py-4 rounded-xl shadow-sm">Get a free website demo</a>
               <span class="text-sm text-[#64748b]">Built with your services &amp; opening hours. No call needed.</span>
             </div>
-          </div>
-
           <!-- Live demo chat widget -->
-          <div class="lg:col-span-6" id="live-demo">
+          <div class="mt-10" id="live-demo">
             <div class="chat-shell rounded-2xl border border-[#e2e8f0] bg-white shadow-[0_24px_60px_-20px_rgba(10,14,39,0.18)] overflow-hidden">
               <div class="flex items-center justify-between gap-3 px-5 py-4 bg-[#0a0e27] text-white">
                 <div class="flex items-center gap-3">
@@ -456,6 +454,27 @@
               </form>
             </div>
             <p class="mt-3 text-xs text-[#64748b] text-center">Try it like a patient would. Brightside Dental is a sample practice, so no real appointments are booked.</p>
+          </div>
+          </div>
+          <div id="ai-receptionist">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-4">AI receptionist for dental practices</span>
+            <h2 class="text-4xl sm:text-5xl lg:text-[44px] font-bold tracking-tight leading-[1.1] mb-5">A helping hand when reception <span class="sb-grad">can’t answer.</span></h2>
+            <p class="text-[18px] text-[#64748b] leading-[1.7] mb-4">Give callers a clear next step—even when your team is busy or the practice is closed. Starion’s automated phone assistant answers routine questions using your approved practice information and captures appointment requests for your reception team to confirm.</p>
+            <p class="text-[17px] font-semibold text-[#0a0e27] mb-6">Built to support your team—not replace it.</p>
+            <div class="grid gap-4"><div class="rounded-2xl border border-[#e2e8f0] bg-white p-5"><p class="font-bold text-[#0a0e27]">Overflow &amp; after-hours support</p><p class="mt-1 text-[15px] text-[#64748b] leading-6">Handle routine enquiries when reception is unavailable.</p></div><div class="rounded-2xl border border-[#e2e8f0] bg-white p-5"><p class="font-bold text-[#0a0e27]">Appointment requests, captured</p><p class="mt-1 text-[15px] text-[#64748b] leading-6">Collect the caller’s details and preferred time for staff follow-up.</p></div><div class="rounded-2xl border border-[#e2e8f0] bg-white p-5"><p class="font-bold text-[#0a0e27]">Your team stays in control</p><p class="mt-1 text-[15px] text-[#64748b] leading-6">Use approved information, agreed handover rules, and staff confirmation.</p></div></div>
+            <p class="mt-4 text-sm text-[#64748b]"><strong>Limited pilot availability.</strong> Call routing, integrations, and suitability are confirmed before deployment.</p>
+            <div class="mt-8 rounded-3xl border border-[#e2e8f0] bg-white p-6">
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div class="space-y-4"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0">📞</span><span class="text-[15px] font-semibold text-[#0a0e27]">Incoming call</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0">🤖</span><span class="text-[15px] font-semibold text-[#0a0e27]">Starion AI Reception</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0">💬</span><span class="text-[15px] font-semibold text-[#0a0e27]">“I’d like to request an appointment.”</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0">✅</span><span class="text-[15px] font-semibold text-[#0a0e27]">Routine questions answered</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0">📅</span><span class="text-[15px] font-semibold text-[#0a0e27]">Appointment request captured</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0">🔔</span><span class="text-[15px] font-semibold text-[#0a0e27]">Reception notified</span></div></div>
+                <div class="rounded-2xl border border-[#e2e8f0] bg-white p-5 self-start">
+                  <p class="text-[11px] font-bold uppercase tracking-wider text-[#f59e0b] mb-3">Example appointment request</p>
+                  <p class="text-[15px] leading-7 text-[#0a0e27]">Caller: Alex Taylor<br>Patient type: New patient<br>Preferred time: Tuesday afternoon</p>
+                  <p class="mt-3 text-[13px] font-semibold text-[#f59e0b]">Status: Awaiting reception confirmation</p>
+                </div>
+              </div>
+              <p class="mt-5 text-xs text-[#64748b]">Illustrative demo — fictional caller information.</p>
+            </div>
+            <p class="mt-4 text-[15px] text-[#64748b]">A clear handover—not another disconnected message. Your team receives the request and confirms the next step.</p>
           </div>
         </div>
       </div>
@@ -566,7 +585,50 @@
       </div>
     </section>
 
-    <!-- 4. FREE MOCK-UP OFFER -->
+        <!-- AI RECEPTIONIST PLANS -->
+    <section id="plans" class="py-24 sm:py-28 border-b border-[#e2e8f0] scroll-mt-20">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-12"><span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-4">AI receptionist · start with the right level of support</span>
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">Test the workflow first. <span class="sb-grad">Expand when it works</span> for your practice.</h2>
+          <p class="mt-3 text-[17px] text-[#64748b]">We confirm your phone setup, call volume, and appointment process before recommending a plan.</p></div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="rounded-2xl border border-[#e2e8f0] bg-white p-8 flex flex-col">
+            <p class="text-xs font-bold uppercase tracking-wider text-[#f59e0b]">Start with a pilot</p>
+            <h3 class="mt-2 text-2xl font-bold">Test reception backup in your practice.</h3>
+            <p class="mt-4 text-4xl font-bold sb-grad inline-block self-start">£199 <span class="text-lg">one-off</span></p>
+            <p class="mt-2 text-[15px] text-[#64748b]">14 days from agreed go-live<br>100 AI-handled call minutes included</p>
+            <ul class="mt-5 space-y-2"><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>One practice</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>One agreed call-handling use case</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Practice-approved administrative FAQs</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Appointment-request capture</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Agreed notification and handover process</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>End-of-pilot review</li></ul>
+            <p class="mt-5 text-sm text-[#64748b]">No automatic subscription. Additional usage requires your approval.</p>
+            <p class="mt-3 text-sm text-[#64748b]">Move to the managed plan within 14 days of completing your pilot and we’ll credit £199 against the setup fee.</p>
+            <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-outline mt-auto pt-0 px-6 py-3 rounded-xl self-start mt-6">Discuss a Pilot</a></div>
+          <div class="rounded-2xl border border-[#e2e8f0] bg-white p-8 flex flex-col">
+            <p class="text-xs font-bold uppercase tracking-wider text-[#f59e0b]">Managed Reception Backup</p>
+            <h3 class="mt-2 text-2xl font-bold">Ongoing support for your front desk.</h3>
+            <p class="mt-4 text-4xl font-bold sb-grad inline-block self-start">£249 <span class="text-lg">/month</span></p>
+            <p class="mt-2 text-[15px] text-[#64748b]">+ £299 one-off setup<br>300 AI-handled call minutes per billing month · Additional usage: £0.50/minute</p>
+            <ul class="mt-5 space-y-2"><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>One practice</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Agreed overflow and/or after-hours routing</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Practice-approved administrative FAQs</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Appointment-request capture</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Agreed staff notification and handover</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Monitoring and error alerts</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Monthly performance summary</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Up to two approved FAQ-update batches per month</li></ul>
+            <p class="mt-5 text-sm text-[#64748b]">Monthly rolling agreement. Direct booking and custom integrations quoted separately.</p>
+            <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold mt-6 px-6 py-3 rounded-xl self-start">Book a Setup Review</a></div>
+        </div>
+        <div class="mt-8 rounded-2xl border border-[#e2e8f0] bg-white p-6"><p class="font-bold mb-3">Important information</p><ul class="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm text-[#64748b]"><li>• Appointment requests are not confirmed bookings.</li><li>• Direct booking requires a supported, separately agreed integration.</li><li>• The assistant does not diagnose or provide clinical advice.</li><li>• Existing phone-provider forwarding charges are not included.</li><li>• Unused included minutes do not roll over.</li><li>• Additional usage is subject to an agreed spending cap.</li><li>• At the cap, calls follow the practice’s agreed fallback route.</li><li>• Setup begins after technical suitability and scope are confirmed.</li></ul></div>
+      </div>
+    </section>
+
+    <!-- BOOK A CALL -->
+    <section id="book-call" class="py-24 sm:py-28 border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="rounded-3xl border border-[#e2e8f0] bg-white p-10 sm:p-14 text-center">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-4">Let’s check the fit</span>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Could reception backup work for <span class="sb-grad">your practice?</span></h2>
+          <p class="mt-4 text-[17px] text-[#64748b] max-w-2xl mx-auto">Book a 15-minute call. We’ll review your phone system, the enquiries you want help with, and whether a pilot is a sensible fit.</p>
+          <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold mt-8 px-10 py-4 rounded-xl text-lg">Book a Free 15-Minute Call</a>
+          <p class="mt-4 text-sm text-[#64748b]">No obligation. No changes to your phone system during the call.</p>
+          <div class="mt-8 grid sm:grid-cols-3 gap-4 text-[15px] text-[#64748b]"><p><strong class="text-[#f59e0b]">1.</strong> Understand your reception workflow</p><p><strong class="text-[#f59e0b]">2.</strong> Check technical and operational fit</p><p><strong class="text-[#f59e0b]">3.</strong> Agree a sensible next step</p></div>
+        </div>
+      </div>
+    </section>
+
+<!-- 4. FREE MOCK-UP OFFER -->
     <section id="free-demo" class="py-24 sm:py-28 bg-[#f8fafc] border-b border-[#e2e8f0] scroll-mt-20">
       <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

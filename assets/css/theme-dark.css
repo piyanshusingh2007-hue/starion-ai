@@ -112,3 +112,6 @@ main h1{background:none!important;-webkit-text-fill-color:initial!important}
 .msg-card{background:rgba(0,161,255,.12)!important;border-color:rgba(0,161,255,.4)!important;color:var(--sb-fg)!important}
 .chat-chip:hover{background:rgba(0,161,255,.18)!important;border-color:var(--sb-blue)!important}
 .phone{border-color:#1e2547!important}
+.cal-new.filled{background:rgba(0,161,255,.18)!important;border-color:var(--sb-blue)!important;color:var(--sb-fg)!important;box-shadow:0 0 0 4px rgba(0,161,255,.15)!important}
+#scroll-progress{background:linear-gradient(90deg,var(--sb-blue),var(--sb-purple))!important}
+.typing-cursor{background-color:var(--sb-blue)!important}
