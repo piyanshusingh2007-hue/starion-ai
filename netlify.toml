@@ -8,11 +8,16 @@
   status = 200
 
 [[redirects]]
-  from = "/dentist"
-  to = "/dentist.html"
+  from = "/dental"
+  to = "/dental.html"
   status = 200
 
 [[redirects]]
-  from = "/dental"
-  to = "/dentist.html"
-  status = 200
+  from = "/dentist"
+  to = "/dental"
+  status = 301
+
+[[redirects]]
+  from = "/denal"
+  to = "/dental"
+  status = 301
