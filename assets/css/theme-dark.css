@@ -1,0 +1,108 @@
+/* Starion AI - theme copied from the Star Broadband site (colours, glass, glow, gradient text, live background).
+   Loaded last on every page. Remove the <link> to go back to the light theme. */
+:root{
+  --sb-bg:#010105; --sb-panel:#0b0d1f; --sb-border:#18203a; --sb-fg:#f8f8f8; --sb-fg2:#a1a1b0;
+  --sb-blue:#00a1ff; --sb-purple:#a46bf5; --sb-cyan:#00dae4;
+  --glow:0 0 20px rgba(100,150,255,.3),0 0 40px rgba(100,150,255,.1);
+  --bg:#010105; --surface:#0b0d1f; --border:#18203a; --text-primary:#f8f8f8; --text-secondary:#a1a1b0;
+  --accent:#00a1ff; --accent-hover:#33b4ff; color-scheme:dark;
+}
+::selection{background:rgba(0,161,255,.35);color:#fff}
+body{background-color:var(--sb-bg)!important;color:var(--sb-fg)!important}
+
+/* backgrounds */
+[class~="bg-white"],[class~="hover:bg-white"]:hover{background-color:var(--sb-bg)!important}
+[class~="bg-white/95"]{background-color:rgba(1,1,5,.7)!important}
+[class~="bg-[#f8fafc]"],[class~="bg-[#f1f5f9]"],[class~="bg-slate-50"],[class~="bg-slate-50/70"],[class~="hover:bg-slate-50/50"]:hover{background-color:var(--sb-panel)!important}
+[class~="bg-amber-50"],[class~="bg-amber-100"],[class~="bg-amber-100/30"],[class~="bg-[#fef3c7]"],[class~="bg-[#fffbeb]"]{background-color:rgba(0,161,255,.10)!important}
+[class~="bg-[#0a0e27]"]{background-color:#12161f!important}
+
+/* text */
+[class~="text-[#0a0e27]"],[class~="hover:text-[#0a0e27]"]:hover,[class~="text-navy"]{color:var(--sb-fg)!important}
+[class~="text-[#64748b]"],[class~="text-[#475569]"],[class~="text-[#94a3b8]"],[class~="text-slate-700"],[class~="text-slate-400"],[class~="text-slate-300"],[class~="text-secondary"]{color:var(--sb-fg2)!important}
+[class~="text-[#f59e0b]"],[class~="hover:text-[#f59e0b]"]:hover,.group:hover [class~="group-hover:text-[#f59e0b]"]{color:var(--sb-blue)!important}
+
+/* borders */
+[class~="border-[#e2e8f0]"],[class~="border-slate-100"],[class~="border-slate-100/60"],[class~="border-slate-200"],[class~="border-slate-500"]{border-color:var(--sb-border)!important}
+[class~="divide-[#e2e8f0]"]>*{border-color:var(--sb-border)!important}
+[class~="border-amber-200"]{border-color:rgba(0,161,255,.3)!important}
+[class~="hover:border-[#f59e0b]"]:hover,[class~="hover:border-[#f59e0b]/40"]:hover,[class~="hover:border-[#f59e0b]/50"]:hover{border-color:rgba(0,161,255,.65)!important}
+
+/* nav */
+header.site-nav{backdrop-filter:blur(20px)!important;-webkit-backdrop-filter:blur(20px)!important}
+.site-nav.scrolled{background-color:rgba(20,20,40,.6)!important;border-bottom:1px solid rgba(100,150,255,.15)!important;box-shadow:none!important}
+.animated-link::after{background:linear-gradient(90deg,var(--sb-blue),var(--sb-purple))!important}
+img[src*="starion-logo"]{filter:invert(1);mix-blend-mode:screen}
+
+/* buttons: gradient primary -> secondary with glow, scale on hover (as Star Broadband) */
+.btn-gold{background:linear-gradient(90deg,var(--sb-blue),var(--sb-purple))!important;color:#fff!important;border:0!important;box-shadow:var(--glow)!important}
+.btn-gold:hover{opacity:.9;transform:scale(1.05)!important;color:#fff!important;box-shadow:var(--glow)!important}
+.btn-outline{background:transparent!important;border:1px solid rgba(0,161,255,.5)!important;color:var(--sb-fg)!important}
+.btn-outline:hover{background-color:rgba(0,161,255,.10)!important;border-color:var(--sb-blue)!important;color:#fff!important;transform:scale(1.05)!important}
+
+/* forms */
+input,textarea,select{background-color:rgba(20,20,40,.6)!important;color:var(--sb-fg)!important;border-color:rgba(100,150,255,.2)!important}
+::placeholder{color:#6b6b80!important;opacity:1}
+:focus-visible{outline-color:var(--sb-blue)}
+
+/* ===== live background: 2 pulsing orbs + particle network canvas ===== */
+@keyframes sb-pulse{0%,100%{opacity:1}50%{opacity:.7}}
+@keyframes sb-gradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+body::before,body::after{content:"";position:fixed;width:24rem;height:24rem;border-radius:50%;filter:blur(64px);pointer-events:none;z-index:-1;animation:sb-pulse 2s ease-in-out infinite}
+body::before{top:25%;left:-8rem;background:rgba(0,161,255,.20)}
+body::after{bottom:25%;right:-8rem;background:rgba(164,107,245,.20);animation-delay:1s}
+#sb-net{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;opacity:.6}
+
+/* let the background show through full-width sections */
+section[class~="bg-white"],footer[class~="bg-white"]{background-color:transparent!important}
+section[class~="bg-[#f8fafc]"],section[class~="bg-slate-50"],section[class~="bg-slate-50/70"]{background-color:rgba(11,13,31,.45)!important}
+
+/* glass cards: blur 20px, soft blue border, lift 8px + glow on hover */
+div[class~="bg-white"][class*="rounded"],article[class~="bg-white"][class*="rounded"],li[class~="bg-white"][class*="rounded"],
+div[class~="bg-[#f8fafc]"][class*="rounded"],div[class~="bg-slate-50"][class*="rounded"]{
+  background-color:rgba(20,20,40,.60)!important;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-color:rgba(100,150,255,.15)!important;transition:translate .5s cubic-bezier(.16,1,.3,1),box-shadow .5s,border-color .3s}
+div[class~="bg-white"][class*="rounded"]:hover,article[class~="bg-white"][class*="rounded"]:hover,li[class~="bg-white"][class*="rounded"]:hover,
+div[class~="bg-[#f8fafc]"][class*="rounded"]:hover,div[class~="bg-slate-50"][class*="rounded"]:hover{
+  translate:0 -8px;border-color:rgba(100,150,255,.45)!important;box-shadow:var(--glow)}
+
+/* pill badges (small uppercase labels) */
+span[class~="uppercase"][class~="text-[#f59e0b]"]{padding:.45rem 1rem;border-radius:999px;background:rgba(20,20,40,.6);
+  border:1px solid rgba(100,150,255,.15);backdrop-filter:blur(20px)}
+
+/* gradient headline (#60a5fa -> #a78bfa), animated like .gradient-text */
+main h1{background:linear-gradient(135deg,#f8f8f8 0%,#f8f8f8 30%,#60a5fa 62%,#a78bfa 85%,#60a5fa 100%);background-size:200% 200%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:sb-gradient 3s ease infinite;
+  text-shadow:0 0 40px rgba(100,150,255,.25)}
+
+a,button{transition:color .25s,background-color .25s,border-color .25s,box-shadow .3s,transform .3s}
+img[src*="assets/images/star"]:not([src*="logo"]){border-radius:14px;transition:transform .5s,box-shadow .5s}
+img[src*="assets/images/star"]:not([src*="logo"]):hover{transform:scale(1.02);box-shadow:var(--glow)}
+
+/* scroll reveal (classes added by theme-fx.js) */
+.sb-reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.sb-reveal.sb-in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  body::before,body::after,main h1{animation:none!important}
+  .sb-reveal{opacity:1!important;transform:none!important;transition:none!important}
+}
+
+/* ===== v2: remove every white surface, stars/electrons stay visible ===== */
+html{background:#010105!important}
+body{background:transparent!important;animation:none!important;opacity:1!important}
+body::before,body::after{z-index:0!important}
+#sb-net{z-index:0!important;opacity:.9!important}
+header,main,footer{position:relative;z-index:1}
+header.site-nav{position:sticky;z-index:50}
+[class*="bg-white"],[class*="bg-slate-50"],[class*="bg-[#f"],[class*="bg-pattern"],.corporate-bg-pattern{background-color:transparent!important;background-image:none!important}
+section,footer{background-color:transparent!important}
+.site-nav,.site-nav.scrolled{background-color:rgba(1,1,5,.35)!important;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.star-card,[class*="rounded"][class*="border"],table,details,.form-input{background-color:rgba(20,20,40,.55)!important;border-color:rgba(100,150,255,.18)!important;color:var(--sb-fg)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.star-card:hover{border-color:rgba(100,150,255,.5)!important;box-shadow:var(--glow)!important}
+[class*="text-[#1e293b]"],[class*="text-slate-900"],[class*="text-slate-800"]{color:var(--sb-fg)!important}
+h1,h2,h3,h4,th,strong{color:var(--sb-fg)}
+main h1{background:none!important;-webkit-text-fill-color:initial!important}
+.sb-grad{background:linear-gradient(135deg,#60a5fa,#a78bfa,#60a5fa);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:sb-gradient 3s ease infinite;filter:drop-shadow(0 0 18px rgba(100,150,255,.45))}
+@keyframes sb-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.sb-float{animation:sb-float 6s ease-in-out infinite}

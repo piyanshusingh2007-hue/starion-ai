@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarLead — Qualified Leads on Autopilot | Starion AI</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta name="description" content="We find the right businesses, send personalized cold emails, follow up automatically, and book calls for you.">
+  <meta name="keywords" content="Starion AI, AI Automation Agency, AI Chatbots, StarBot, StarLead, StarBook, StarMail, StarFlow, StarAds, Workflow Automation, Piyanshu Singh">
+  <meta name="author" content="Piyanshu Singh">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="StarLead — Qualified Leads on Autopilot | Starion AI">
+  <meta property="og:description" content="We find the right businesses, send personalized cold emails, follow up automatically, and book calls for you.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Starion AI">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#0a0e27',
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              800: '#111739',
+              900: '#0a0e27'
+            },
+            surface: '#f8fafc',
+            bordercol: '#e2e8f0',
+            gold: {
+              DEFAULT: '#f59e0b',
+              hover: '#d97706',
+              light: '#fef3c7',
+              muted: '#fbbf24'
+            },
+            secondary: '#64748b'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Inline Core CSS Design System -->
+  <style>
+    /* CSS Reset & Design Tokens */
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --border: #e2e8f0;
+      --text-primary: #0a0e27;
+      --text-secondary: #64748b;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #ffffff;
+      color: #0a0e27;
+      line-height: 1.7;
+      font-size: 17px;
+      overflow-x: hidden;
+      opacity: 0;
+      animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .page-fade-out {
+      opacity: 0 !important;
+      transform: translateY(-6px) !important;
+      transition: opacity 0.35s ease, transform 0.35s ease !important;
+    }
+
+    /* Scroll progress bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: #f59e0b;
+      z-index: 99999;
+      width: 0%;
+      transition: width 0.1s ease-out;
+    }
+
+    /* Global Nav Styling */
+    .site-nav {
+      transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .site-nav.scrolled {
+      background-color: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px -2px rgba(10, 14, 39, 0.04);
+    }
+
+    /* Animated Link Underline */
+    .animated-link {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .animated-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #f59e0b;
+      transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .animated-link:hover::after,
+    .animated-link.active::after {
+      width: 100%;
+    }
+
+    /* Card Hover Lift & Border Color Shift */
+    .star-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 32px;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .star-card:hover {
+      transform: translateY(-6px);
+      border-color: #f59e0b;
+      box-shadow: 0 12px 30px -10px rgba(10, 14, 39, 0.06);
+    }
+
+    /* Button Hover Micro-Interactions */
+    .btn-gold {
+      background-color: #f59e0b;
+      color: #0a0e27;
+      font-weight: 600;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-gold:hover {
+      background-color: #d97706;
+      transform: scale(1.02);
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+      color: #ffffff;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid #0a0e27;
+      color: #0a0e27;
+      font-weight: 600;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-outline:hover {
+      background-color: #0a0e27;
+      color: #ffffff;
+      transform: scale(1.02);
+      box-shadow: 0 4px 14px rgba(10, 14, 39, 0.15);
+    }
+
+    /* Form Input Glow Transition */
+    .form-input {
+      width: 100%;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 16px;
+      color: #0a0e27;
+      background-color: #f8fafc;
+      transition: all 0.25s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #f59e0b;
+      background-color: #ffffff;
+      box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
+    }
+
+    /* Scroll Reveal Initial States */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered card delays */
+    .stagger-1 { transition-delay: 0.08s; }
+    .stagger-2 { transition-delay: 0.16s; }
+    .stagger-3 { transition-delay: 0.24s; }
+    .stagger-4 { transition-delay: 0.32s; }
+    .stagger-5 { transition-delay: 0.40s; }
+    .stagger-6 { transition-delay: 0.48s; }
+
+    /* FAQ Accordion Transitions */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      opacity: 1;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(180deg);
+      color: #f59e0b;
+    }
+
+    /* Step Diagram Line */
+    .step-connector {
+      position: absolute;
+      left: 23px;
+      top: 48px;
+      bottom: -16px;
+      width: 2px;
+      background-color: #e2e8f0;
+    }
+
+    /* Abstract Soft Grid Background */
+    .corporate-bg-pattern {
+      background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Typist Cursor */
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      vertical-align: middle;
+      background-color: #f59e0b;
+      margin-left: 4px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Accessible prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      body {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .typing-cursor {
+        display: none !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/theme-dark.css">
+  <script src="assets/js/theme-fx.js" defer></script>
+</head>
+<body class="bg-white text-[#0a0e27] antialiased">
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+
+  <!-- Global Top Sticky Navigation -->
+  <header class="site-nav sticky top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-transparent transition-all duration-300">
+    <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2 group transition-transform duration-200 hover:scale-[1.01]" aria-label="Starion AI Home">
+        <img src="assets/images/starion-logo.jpg" onerror="this.onerror=null;this.src='assets/images/starion-logo.svg'" alt="Starion AI" class="h-9 w-auto object-contain" />
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-[#64748b]">
+        <a href="services.html" class="animated-link py-1 hover:text-[#0a0e27] text-[#0a0e27] active font-semibold">Services</a>
+        <a href="case-studies.html" class="animated-link py-1 hover:text-[#0a0e27] ">Case Studies</a>
+        <a href="about.html" class="animated-link py-1 hover:text-[#0a0e27] ">About</a>
+        <a href="contact.html" class="animated-link py-1 hover:text-[#0a0e27] ">Contact</a>
+      </nav>
+
+      <!-- Right CTA -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold text-[15px] px-6 py-2.5 rounded-xl shadow-sm">
+          Book a Free Call
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-toggle" type="button" aria-label="Toggle navigation menu" class="md:hidden p-2 text-[#0a0e27] hover:text-[#f59e0b] focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden md:hidden bg-white border-b border-[#e2e8f0] px-6 py-6 shadow-xl space-y-4">
+      <a href="services.html" class="block font-medium text-[#0a0e27] py-2 border-b border-slate-100">Services Overview</a>
+      <div class="pl-4 space-y-2 text-sm text-[#64748b]">
+        <a href="starbot.html" class="block py-1 hover:text-[#0a0e27]">★ StarBot (AI Chatbots)</a>
+        <a href="starlead.html" class="block py-1 hover:text-[#0a0e27]">★ StarLead (Cold Outbound)</a>
+        <a href="starbook.html" class="block py-1 hover:text-[#0a0e27]">★ StarBook (Appointment Booking)</a>
+        <a href="starmail.html" class="block py-1 hover:text-[#0a0e27]">★ StarMail (Email Marketing)</a>
+        <a href="starflow.html" class="block py-1 hover:text-[#0a0e27]">★ StarFlow (Workflow Automation)</a>
+        <a href="starads.html" class="block py-1 hover:text-[#0a0e27]">★ StarAds (AI-Assisted Ads)</a>
+      </div>
+      <a href="case-studies.html" class="block font-medium text-[#0a0e27] py-2 border-b border-slate-100">Case Studies</a>
+      <a href="about.html" class="block font-medium text-[#0a0e27] py-2 border-b border-slate-100">About</a>
+      <a href="contact.html" class="block font-medium text-[#0a0e27] py-2 border-b border-slate-100">Contact</a>
+      <div class="pt-2">
+        <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold w-full text-center py-3 rounded-xl">
+          Book a Free Call
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+    <!-- 1. HERO -->
+    <section class="py-24 sm:py-28 bg-white corporate-bg-pattern border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-4">SERVICE</span>
+          <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-bold tracking-tight text-[#0a0e27] leading-tight mb-4">
+            ★ StarLead &mdash; <span class="text-[#64748b] font-normal">Qualified Leads on Autopilot</span>
+          </h1>
+          <p class="text-[18px] sm:text-[20px] text-[#0a0e27] leading-[1.7] font-medium mb-8">
+            We find the right businesses, send personalized cold emails, follow up automatically, and book calls for you.
+          </p>
+          <div>
+            <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold text-[16px] px-8 py-4 rounded-xl shadow-sm">
+              Book This Service
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. IMAGE PLACEHOLDER -->
+    <section class="py-12 bg-[#f8fafc] border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="reveal">
+          
+  <div class="relative w-full rounded-2xl overflow-hidden shadow-xl border border-[#e2e8f0] group transition-all duration-300 hover:shadow-2xl hover:border-[#f59e0b]/40">
+    <div class="flex items-center gap-1.5 bg-[#1e293b] px-4 py-2.5">
+      <span class="w-3 h-3 rounded-full bg-[#ff5f57]"></span>
+      <span class="w-3 h-3 rounded-full bg-[#febc2e]"></span>
+      <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
+      <span class="ml-3 text-xs text-slate-400 font-mono">StarLead — Autonomous B2B Lead Generation</span>
+      <span class="ml-auto inline-flex items-center gap-1 text-[10px] font-bold text-emerald-400 uppercase tracking-widest">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Live
+      </span>
+    </div>
+    <img src="assets/images/starlead-dashboard.jpg" onerror="this.style.display='none'"
+         alt="StarLead dashboard showing 12,450 active prospects, $1.2M pipeline, verified emails and outreach funnel"
+         class="w-full object-cover block" loading="lazy" />
+  </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. THE PROBLEM -->
+    <section class="py-20 sm:py-24 bg-white border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="max-w-3xl reveal">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">THE REALITY</span>
+          <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight mb-6">
+            The Problem
+          </h2>
+          <div class="text-[17px] text-[#64748b] leading-[1.8] space-y-4">
+            
+          <p>
+            Most businesses know they should do outbound, but prospecting, writing emails, and following up consistently is a full-time job. StarLead runs the entire outreach system for you.
+          </p>
+        
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. HOW IT WORKS (Vertical Step Diagram in HTML/CSS) -->
+    <section class="py-24 sm:py-28 bg-[#f8fafc] border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-16 reveal">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">STEP-BY-STEP FLOW</span>
+          <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight">
+            How It Works
+          </h2>
+          <p class="mt-3 text-[17px] text-[#64748b]">
+            A transparent architectural blueprint of how StarLead operates from initial trigger to completed outcome.
+          </p>
+        </div>
+
+        <div class="max-w-2xl">
+          
+          <div class="relative flex items-start gap-5 reveal stagger-2">
+            <div class="step-connector"></div>
+            <div class="w-12 h-12 rounded-full bg-white border-2 border-[#e2e8f0] text-[#0a0e27] font-bold text-sm flex items-center justify-center flex-shrink-0 relative z-10 shadow-sm">
+              1
+            </div>
+            <div class="pt-2 pb-6">
+              <h4 class="text-[18px] font-semibold text-[#0a0e27] mb-1">Define ideal customer</h4>
+              <p class="text-[15px] text-[#64748b] leading-relaxed">We isolate your exact high-value buyer profile: industry, revenue, headcount, and location.</p>
+            </div>
+          </div>
+        
+
+          <div class="relative flex items-start gap-5 reveal stagger-3">
+            <div class="step-connector"></div>
+            <div class="w-12 h-12 rounded-full bg-white border-2 border-[#e2e8f0] text-[#0a0e27] font-bold text-sm flex items-center justify-center flex-shrink-0 relative z-10 shadow-sm">
+              2
+            </div>
+            <div class="pt-2 pb-6">
+              <h4 class="text-[18px] font-semibold text-[#0a0e27] mb-1">Build and verify lead list</h4>
+              <p class="text-[15px] text-[#64748b] leading-relaxed">Source fresh B2B contact lists and run triple-step email verification to maintain sub-2% bounce rates.</p>
+            </div>
+          </div>
+        
+
+          <div class="relative flex items-start gap-5 reveal stagger-4">
+            <div class="step-connector"></div>
+            <div class="w-12 h-12 rounded-full bg-white border-2 border-[#e2e8f0] text-[#0a0e27] font-bold text-sm flex items-center justify-center flex-shrink-0 relative z-10 shadow-sm">
+              3
+            </div>
+            <div class="pt-2 pb-6">
+              <h4 class="text-[18px] font-semibold text-[#0a0e27] mb-1">AI writes personalized cold emails</h4>
+              <p class="text-[15px] text-[#64748b] leading-relaxed">Draft tailored value propositions and relevant hooks that feel written by an executive.</p>
+            </div>
+          </div>
+        
+
+          <div class="relative flex items-start gap-5 reveal stagger-5">
+            <div class="step-connector"></div>
+            <div class="w-12 h-12 rounded-full bg-white border-2 border-[#e2e8f0] text-[#0a0e27] font-bold text-sm flex items-center justify-center flex-shrink-0 relative z-10 shadow-sm">
+              4
+            </div>
+            <div class="pt-2 pb-6">
+              <h4 class="text-[18px] font-semibold text-[#0a0e27] mb-1">Send first email</h4>
+              <p class="text-[15px] text-[#64748b] leading-relaxed">Deliver emails from warmed dedicated secondary domains to protect your primary domain reputation.</p>
+            </div>
+          </div>
+        
+
+          <div class="relative flex items-start gap-5 reveal stagger-1">
+            <div class="step-connector"></div>
+            <div class="w-12 h-12 rounded-full bg-white border-2 border-[#e2e8f0] text-[#0a0e27] font-bold text-sm flex items-center justify-center flex-shrink-0 relative z-10 shadow-sm">
+              5
+            </div>
+            <div class="pt-2 pb-6">
+              <h4 class="text-[18px] font-semibold text-[#0a0e27] mb-1">Follow up 3–5 times</h4>
+              <p class="text-[15px] text-[#64748b] leading-relaxed">Execute persistent, polite follow-up cadences spaced across 14 to 21 days.</p>
+            </div>
+          </div>
+        
+
+          <div class="relative flex items-start gap-5 reveal stagger-2">
+            <div class="step-connector"></div>
+            <div class="w-12 h-12 rounded-full bg-white border-2 border-[#e2e8f0] text-[#0a0e27] font-bold text-sm flex items-center justify-center flex-shrink-0 relative z-10 shadow-sm">
+              6
+            </div>
+            <div class="pt-2 pb-6">
+              <h4 class="text-[18px] font-semibold text-[#0a0e27] mb-1">Detect replies automatically</h4>
+              <p class="text-[15px] text-[#64748b] leading-relaxed">Monitor positive responses and instantly halt sequences upon reply.</p>
+            </div>
+          </div>
+        
+
+          <div class="relative flex items-start gap-5 reveal stagger-3">
+            <div class="step-connector"></div>
+            <div class="w-12 h-12 rounded-full bg-white border-2 border-[#e2e8f0] text-[#0a0e27] font-bold text-sm flex items-center justify-center flex-shrink-0 relative z-10 shadow-sm">
+              7
+            </div>
+            <div class="pt-2 pb-6">
+              <h4 class="text-[18px] font-semibold text-[#0a0e27] mb-1">Book calls on your calendar</h4>
+              <p class="text-[15px] text-[#64748b] leading-relaxed">Send direct booking links or handle calendar coordination to lock in meetings.</p>
+            </div>
+          </div>
+        
+
+          <div class="relative flex items-start gap-5 reveal stagger-4">
+            
+            <div class="w-12 h-12 rounded-full bg-white border-2 border-[#e2e8f0] text-[#0a0e27] font-bold text-sm flex items-center justify-center flex-shrink-0 relative z-10 shadow-sm">
+              8
+            </div>
+            <div class="pt-2 pb-6">
+              <h4 class="text-[18px] font-semibold text-[#0a0e27] mb-1">Report leads, replies, booked calls</h4>
+              <p class="text-[15px] text-[#64748b] leading-relaxed">Provide monthly transparent reports with open rates, replies, and closed meetings.</p>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. WHAT'S INCLUDED -->
+    <section class="py-24 sm:py-28 bg-white border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5 reveal">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">DELIVERABLES</span>
+            <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight mb-4">
+              What's Included
+            </h2>
+            <p class="text-[17px] text-[#64748b] leading-relaxed">
+              Every deployment is complete, tested, and handed over with full documentation. No assembly or guesswork required.
+            </p>
+          </div>
+
+          <div class="lg:col-span-7 reveal stagger-2">
+            <div class="p-8 sm:p-10 rounded-2xl bg-[#f8fafc] border border-[#e2e8f0] shadow-sm">
+              <ul class="space-y-4">
+                
+          <li class="flex items-start gap-3">
+            <span class="w-5 h-5 rounded-full bg-amber-50 text-[#f59e0b] flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+            <span class="text-[15px] text-[#0a0e27]">Ideal customer profile definition</span>
+          </li>
+        
+
+          <li class="flex items-start gap-3">
+            <span class="w-5 h-5 rounded-full bg-amber-50 text-[#f59e0b] flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+            <span class="text-[15px] text-[#0a0e27]">Lead list building and email verification</span>
+          </li>
+        
+
+          <li class="flex items-start gap-3">
+            <span class="w-5 h-5 rounded-full bg-amber-50 text-[#f59e0b] flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+            <span class="text-[15px] text-[#0a0e27]">AI-written personalized cold email sequences</span>
+          </li>
+        
+
+          <li class="flex items-start gap-3">
+            <span class="w-5 h-5 rounded-full bg-amber-50 text-[#f59e0b] flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+            <span class="text-[15px] text-[#0a0e27]">Automated follow-ups (3–5 touches)</span>
+          </li>
+        
+
+          <li class="flex items-start gap-3">
+            <span class="w-5 h-5 rounded-full bg-amber-50 text-[#f59e0b] flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+            <span class="text-[15px] text-[#0a0e27]">Reply detection and follow-up stop</span>
+          </li>
+        
+
+          <li class="flex items-start gap-3">
+            <span class="w-5 h-5 rounded-full bg-amber-50 text-[#f59e0b] flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+            <span class="text-[15px] text-[#0a0e27]">Call booking on your calendar</span>
+          </li>
+        
+
+          <li class="flex items-start gap-3">
+            <span class="w-5 h-5 rounded-full bg-amber-50 text-[#f59e0b] flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+            <span class="text-[15px] text-[#0a0e27]">Monthly performance report</span>
+          </li>
+        
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. TOOLS WE USE -->
+    <section class="py-20 sm:py-24 bg-[#f8fafc] border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="max-w-3xl reveal">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">STACK & INFRASTRUCTURE</span>
+          <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight mb-6">
+            Tools We Use
+          </h2>
+          <div class="p-8 rounded-2xl bg-white border border-[#e2e8f0] shadow-sm text-[16px] text-[#64748b] leading-relaxed">
+            
+          <p class="mb-2">
+            We use Apollo.io for lead data, Instantly.ai or Smartlead for sending and follow-ups, and Clay for enrichment. Paid tool costs are included in your retainer.
+          </p>
+        
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. PRICING -->
+    <section class="py-24 sm:py-28 bg-white border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto text-center reveal">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">INVESTMENT</span>
+          <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight mb-8">
+            Simple, Transparent Pricing
+          </h2>
+          <div class="p-8 sm:p-12 rounded-2xl bg-[#f8fafc] border-2 border-[#e2e8f0] shadow-sm text-left">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 pb-6 border-b border-[#e2e8f0]">
+              <div>
+                <h3 class="text-2xl font-bold text-[#0a0e27]">StarLead Complete Package</h3>
+                <p class="text-sm text-[#64748b] mt-1">Full system build, integration & maintenance</p>
+              </div>
+              <div class="text-right">
+                <span class="text-3xl sm:text-4xl font-bold text-[#0a0e27]">$1,000 setup</span>
+                <span class="text-xl text-[#f59e0b] font-semibold"> + $500/month</span>
+              </div>
+            </div>
+            <p class="mt-6 text-[15px] text-[#64748b] leading-relaxed">
+              Setup includes building, testing, and installation. Monthly covers hosting, updates, and support.
+            </p>
+            <div class="mt-8">
+              <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold w-full text-center py-4 rounded-xl text-base font-semibold">
+                Book This Service Now &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CASE STUDY (Placeholder) -->
+    <section class="py-20 sm:py-24 bg-[#f8fafc] border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto reveal">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">PROVEN MODEL</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold text-[#0a0e27] tracking-tight mb-6">
+            Case Study
+          </h2>
+          <div class="p-8 rounded-2xl bg-white border border-[#e2e8f0] shadow-sm">
+            <h3 class="text-lg font-bold text-[#0a0e27] mb-2">SaaS company — 30 qualified leads in 30 days</h3>
+            <p class="text-[16px] text-[#64748b] leading-relaxed">
+              &ldquo;A B2B SaaS company needed pipeline. We built a targeted list, sent personalized sequences, and booked 30 qualified leads in the first month.&rdquo;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FAQ (4 Accordions) -->
+    <section class="py-24 sm:py-28 bg-white border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-12 reveal">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">QUESTIONS & ANSWERS</span>
+          <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight">
+            Frequently Asked Questions
+          </h2>
+        </div>
+        <div class="max-w-3xl space-y-4 reveal">
+          
+          <div class="faq-item border border-[#e2e8f0] rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-200">
+            <button type="button" class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-[#0a0e27] text-[17px] hover:text-[#f59e0b] focus:outline-none">
+              <span>How many leads per month?</span>
+              <span class="faq-icon text-[#64748b] text-xl">&darr;</span>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-[15px] text-[#64748b] leading-relaxed border-t border-slate-100/60 pt-4">
+              Depends on your niche and list size; typically 20–50 qualified conversations.
+            </div>
+          </div>
+        
+
+          <div class="faq-item border border-[#e2e8f0] rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-200">
+            <button type="button" class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-[#0a0e27] text-[17px] hover:text-[#f59e0b] focus:outline-none">
+              <span>Is cold email legal?</span>
+              <span class="faq-icon text-[#64748b] text-xl">&darr;</span>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-[15px] text-[#64748b] leading-relaxed border-t border-slate-100/60 pt-4">
+              Yes, when done compliantly. We follow CAN-SPAM and GDPR-aware best practices.
+            </div>
+          </div>
+        
+
+          <div class="faq-item border border-[#e2e8f0] rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-200">
+            <button type="button" class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-[#0a0e27] text-[17px] hover:text-[#f59e0b] focus:outline-none">
+              <span>Can I see the emails before they send?</span>
+              <span class="faq-icon text-[#64748b] text-xl">&darr;</span>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-[15px] text-[#64748b] leading-relaxed border-t border-slate-100/60 pt-4">
+              Yes, all sequences are approved by you before launch.
+            </div>
+          </div>
+        
+
+          <div class="faq-item border border-[#e2e8f0] rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-200">
+            <button type="button" class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-[#0a0e27] text-[17px] hover:text-[#f59e0b] focus:outline-none">
+              <span>How long until results?</span>
+              <span class="faq-icon text-[#64748b] text-xl">&darr;</span>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-[15px] text-[#64748b] leading-relaxed border-t border-slate-100/60 pt-4">
+              First replies usually arrive within 1–2 weeks.
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. BOOKING SECTION (Inline Calendly Embed) -->
+    <section id="book" class="py-24 sm:py-28 bg-[#f8fafc] border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-10 reveal">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">SCHEDULE CALL</span>
+          <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight mb-3">
+            Book This Service
+          </h2>
+          <p class="text-[17px] text-[#64748b]">
+            Choose a 15-minute slot directly on our calendar. We'll map out how StarLead will work in your environment.
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto rounded-2xl overflow-hidden border border-[#e2e8f0] bg-white shadow-sm p-4 sm:p-6 reveal">
+          <div class="calendly-inline-widget w-full" data-url="https://calendly.com/piyanshusingh2007/new-meeting?hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          
+          <div class="mt-4 pt-4 border-t border-[#e2e8f0] flex flex-col sm:flex-row items-center justify-between text-xs text-[#64748b] gap-2">
+            <span>Direct contact fallback: Email <a href="mailto:piyanshusingh2007@gmail.com" class="text-[#0a0e27] font-semibold underline">piyanshusingh2007@gmail.com</a> &bull; Phone <a href="tel:+919990688580" class="text-[#0a0e27] font-semibold underline">+91 9990688580</a></span>
+            <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="text-[#f59e0b] font-medium hover:underline">Open in new tab &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. FINAL CTA -->
+    
+  <!-- Section 8 / Final CTA (Uniform across all pages) -->
+  <section class="py-24 sm:py-28 bg-[#f8fafc] border-t border-[#e2e8f0]">
+    <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8 text-center">
+      <div class="max-w-2xl mx-auto reveal">
+        <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-4">Start Growing Today</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-semibold text-[#0a0e27] tracking-tight leading-tight">
+          Ready to Grow With AI?
+        </h2>
+        <p class="mt-4 text-[17px] sm:text-[18px] text-[#64748b] leading-relaxed">
+          Book a free 15-minute call. We'll map the right system for your business — no pitch, no pressure.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold text-[16px] px-8 py-4 rounded-xl shadow-sm w-full sm:w-auto">
+            Book a Free Call
+          </a>
+          <a href="services.html" class="btn-outline text-[16px] px-8 py-4 rounded-xl w-full sm:w-auto">
+            Explore All Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+
+  <!-- Global Footer -->
+  <footer class="bg-white border-t border-[#e2e8f0] pt-16 sm:pt-20 pb-12">
+    <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-16 border-b border-[#e2e8f0]">
+        
+        <!-- Column 1: Brand & Tagline -->
+        <div>
+          <a href="index.html" class="flex items-center gap-2 mb-3">
+            <img src="assets/images/starion-logo.jpg" onerror="this.onerror=null;this.src='assets/images/starion-logo.svg'" alt="Starion AI" class="h-9 w-auto object-contain" />
+          </a>
+          <p class="text-xs font-semibold uppercase tracking-wider text-[#f59e0b] mb-2">AI Automation That Shines</p>
+          <p class="text-[14px] text-[#64748b] leading-relaxed mb-4">
+            Enterprise-grade AI systems that help businesses get more customers and eliminate manual work.
+          </p>
+          <p class="text-xs text-[#64748b]">Serving businesses globally &bull; Founded by Piyanshu Singh</p>
+        </div>
+
+        <!-- Column 2: Services (6 links) -->
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-[#0a0e27] mb-4">Services</h3>
+          <ul class="space-y-2.5 text-[14px]">
+            <li><a href="starbot.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">StarBot — AI Chatbots</a></li>
+            <li><a href="starlead.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">StarLead — Lead Generation</a></li>
+            <li><a href="starbook.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">StarBook — Bookings</a></li>
+            <li><a href="starmail.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">StarMail — Email Marketing</a></li>
+            <li><a href="starflow.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">StarFlow — Workflows</a></li>
+            <li><a href="starads.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">StarAds — AI-Managed Ads</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-[#0a0e27] mb-4">Company</h3>
+          <ul class="space-y-2.5 text-[14px]">
+            <li><a href="about.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">About Us</a></li>
+            <li><a href="case-studies.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">Case Studies</a></li>
+            <li><a href="services.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">Services Overview</a></li>
+            <li><a href="contact.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">Contact</a></li>
+            <li><a href="https://starion-ai.notion.site" target="_blank" rel="noopener noreferrer" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">Knowledge Base (Notion)</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Booking -->
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-[#0a0e27] mb-4">Get in Touch</h3>
+          <ul class="space-y-2.5 text-[14px] text-[#64748b]">
+            <li>
+              <span class="block text-xs text-[#0a0e27] font-semibold">Email:</span>
+              <a href="mailto:piyanshusingh2007@gmail.com" class="hover:text-[#0a0e27] underline transition-colors">piyanshusingh2007@gmail.com</a>
+            </li>
+            <li>
+              <span class="block text-xs text-[#0a0e27] font-semibold">Phone / WhatsApp:</span>
+              <a href="tel:+919990688580" class="hover:text-[#0a0e27] transition-colors">+91 9990688580</a>
+            </li>
+            <li>
+              <span class="block text-xs text-[#0a0e27] font-semibold">Direct Booking:</span>
+              <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="text-[#f59e0b] font-medium hover:underline">Schedule 15-Min Meeting &rarr;</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom row -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#64748b] gap-4">
+        <p>© 2026 Starion AI. All rights reserved.</p>
+        <p>Light, clean, enterprise AI engineering &bull; Global Operations</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Inline Script (TypeScript / ES6) Handling Interactions & Animations -->
+  <script>
+    window.addEventListener('pageshow', () => document.body.classList.remove('page-fade-out'));
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Scroll Progress Bar
+      const progressBar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        if (progressBar) progressBar.style.width = progress + '%';
+      });
+
+      // 2. Navigation Background on Scroll
+      const nav = document.querySelector('.site-nav');
+      const handleNavScroll = () => {
+        if (window.scrollY > 20) {
+          nav?.classList.add('scrolled');
+        } else {
+          nav?.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', handleNavScroll);
+      handleNavScroll();
+
+      // 3. Mobile Navigation Drawer Toggle
+      const mobileToggle = document.getElementById('mobile-toggle');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      if (mobileToggle && mobileDrawer) {
+        mobileToggle.addEventListener('click', () => {
+          const isHidden = mobileDrawer.classList.contains('hidden');
+          if (isHidden) {
+            mobileDrawer.classList.remove('hidden');
+          } else {
+            mobileDrawer.classList.add('hidden');
+          }
+        });
+      }
+
+      // 4. Smooth Page-to-Page Transition (Fade Out)
+      document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !link.target && !href.includes('calendly.com')) {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.classList.add('page-fade-out');
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300);
+          });
+        }
+      });
+
+      // 5. Scroll Reveal with Intersection Observer
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        reveals.forEach(el => revealObserver.observe(el));
+      } else {
+        reveals.forEach(el => el.classList.add('active'));
+      }
+
+      // 6. Number Count-up Animation
+      const countUpElements = document.querySelectorAll('[data-countup]');
+      if ('IntersectionObserver' in window) {
+        const countObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const target = parseInt(entry.target.getAttribute('data-countup'), 10);
+              const suffix = entry.target.getAttribute('data-suffix') || '';
+              const prefix = entry.target.getAttribute('data-prefix') || '';
+              let current = 0;
+              const duration = 1400;
+              const stepTime = Math.max(16, Math.floor(duration / (target || 1)));
+              const timer = setInterval(() => {
+                current += Math.ceil(target / 40);
+                if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+                }
+                entry.target.textContent = prefix + current + suffix;
+              }, stepTime);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.2 });
+
+        countUpElements.forEach(el => countObserver.observe(el));
+      }
+
+      // 7. FAQ Accordions (Smooth Open/Close)
+      document.querySelectorAll('.faq-header').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          const isOpen = item.classList.contains('open');
+          // Close all other items in the same container
+          const parent = item.parentElement;
+          if (parent) {
+            parent.querySelectorAll('.faq-item').forEach(other => {
+              if (other !== item) other.classList.remove('open');
+            });
+          }
+          if (isOpen) {
+            item.classList.remove('open');
+          } else {
+            item.classList.add('open');
+          }
+        });
+      });
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    });
+  </script>
+  <!-- Botpress webchat -->
+  <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2026/10/27/23/20261027232329-FPGOSF5E.js" defer></script>
+<script src="assets/js/demo-chat.js" defer></script>
+</body>
+</html>
+

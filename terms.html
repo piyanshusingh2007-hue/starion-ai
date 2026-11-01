@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service | Starion AI</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="canonical" href="https://starion.site/terms.html">
+  <meta name="description" content="Terms of Service for Starion AI&#x27;s automation services.">
+  <meta name="keywords" content="Starion AI, AI Automation Agency, AI Chatbots, StarBot, StarLead, StarBook, StarMail, StarFlow, StarAds, Workflow Automation, Piyanshu Singh">
+  <meta name="author" content="Piyanshu Singh">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Terms of Service | Starion AI">
+  <meta property="og:description" content="Terms of Service for Starion AI&#x27;s automation services.">
+  <meta property="og:url" content="https://starion.site/terms.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Starion AI">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#0a0e27',
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              800: '#111739',
+              900: '#0a0e27'
+            },
+            surface: '#f8fafc',
+            bordercol: '#e2e8f0',
+            gold: {
+              DEFAULT: '#f59e0b',
+              hover: '#d97706',
+              light: '#fef3c7',
+              muted: '#fbbf24'
+            },
+            secondary: '#64748b'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Inline Core CSS Design System -->
+  <style>
+    /* CSS Reset & Design Tokens */
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --border: #e2e8f0;
+      --text-primary: #0a0e27;
+      --text-secondary: #64748b;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #ffffff;
+      color: #0a0e27;
+      line-height: 1.7;
+      font-size: 17px;
+      overflow-x: hidden;
+      opacity: 0;
+      animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .page-fade-out {
+      opacity: 0 !important;
+      transform: translateY(-6px) !important;
+      transition: opacity 0.35s ease, transform 0.35s ease !important;
+    }
+
+    /* Scroll progress bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: #f59e0b;
+      z-index: 99999;
+      width: 0%;
+      transition: width 0.1s ease-out;
+    }
+
+    /* Global Nav Styling */
+    .site-nav {
+      transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .site-nav.scrolled {
+      background-color: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px -2px rgba(10, 14, 39, 0.04);
+    }
+
+    /* Animated Link Underline */
+    .animated-link {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .animated-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #f59e0b;
+      transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .animated-link:hover::after,
+    .animated-link.active::after {
+      width: 100%;
+    }
+
+    /* Card Hover Lift & Border Color Shift */
+    .star-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 32px;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .star-card:hover {
+      transform: translateY(-6px);
+      border-color: #f59e0b;
+      box-shadow: 0 12px 30px -10px rgba(10, 14, 39, 0.06);
+    }
+
+    /* Button Hover Micro-Interactions */
+    .btn-gold {
+      background-color: #f59e0b;
+      color: #0a0e27;
+      font-weight: 600;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-gold:hover {
+      background-color: #d97706;
+      transform: scale(1.02);
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+      color: #ffffff;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid #0a0e27;
+      color: #0a0e27;
+      font-weight: 600;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-outline:hover {
+      background-color: #0a0e27;
+      color: #ffffff;
+      transform: scale(1.02);
+      box-shadow: 0 4px 14px rgba(10, 14, 39, 0.15);
+    }
+
+    /* Form Input Glow Transition */
+    .form-input {
+      width: 100%;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 16px;
+      color: #0a0e27;
+      background-color: #f8fafc;
+      transition: all 0.25s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #f59e0b;
+      background-color: #ffffff;
+      box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
+    }
+
+    /* Scroll Reveal Initial States */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered card delays */
+    .stagger-1 { transition-delay: 0.08s; }
+    .stagger-2 { transition-delay: 0.16s; }
+    .stagger-3 { transition-delay: 0.24s; }
+    .stagger-4 { transition-delay: 0.32s; }
+    .stagger-5 { transition-delay: 0.40s; }
+    .stagger-6 { transition-delay: 0.48s; }
+
+    /* FAQ Accordion Transitions */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      opacity: 1;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(180deg);
+      color: #f59e0b;
+    }
+
+    /* Step Diagram Line */
+    .step-connector {
+      position: absolute;
+      left: 23px;
+      top: 48px;
+      bottom: -16px;
+      width: 2px;
+      background-color: #e2e8f0;
+    }
+
+    /* Abstract Soft Grid Background */
+    .corporate-bg-pattern {
+      background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Typist Cursor */
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      vertical-align: middle;
+      background-color: #f59e0b;
+      margin-left: 4px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Accessible prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      body {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .typing-cursor {
+        display: none !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/theme-dark.css">
+  <script src="assets/js/theme-fx.js" defer></script>
+</head>
+<body class="bg-white text-[#0a0e27] antialiased">
+  <div id="scroll-progress"></div>
+
+  <header class="site-nav sticky top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-transparent transition-all duration-300">
+    <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2 group transition-transform duration-200 hover:scale-[1.01]" aria-label="Starion AI Home">
+        <img src="assets/images/starion-logo.jpg" onerror="this.onerror=null;this.src='assets/images/starion-logo.svg'" alt="Starion AI" class="h-9 w-auto object-contain" />
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-[#64748b]">
+        <a href="services.html" class="animated-link py-1 hover:text-[#0a0e27]">Services</a>
+        <a href="case-studies.html" class="animated-link py-1 hover:text-[#0a0e27] ">Case Studies</a>
+        <a href="about.html" class="animated-link py-1 hover:text-[#0a0e27] ">About</a>
+        <a href="contact.html" class="animated-link py-1 hover:text-[#0a0e27] ">Contact</a>
+      </nav>
+
+      <!-- Right CTA -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold text-[15px] px-6 py-2.5 rounded-xl shadow-sm">
+          Book a Free Call
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-toggle" type="button" aria-label="Toggle navigation menu" class="md:hidden p-2 text-[#0a0e27] hover:text-[#f59e0b] focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden md:hidden bg-white border-b border-[#e2e8f0] px-6 py-6 shadow-xl space-y-4">
+      <a href="services.html" class="block font-medium text-[#0a0e27] py-2 border-b border-slate-100">Services Overview</a>
+      <div class="pl-4 space-y-2 text-sm text-[#64748b]">
+        <a href="starbot.html" class="block py-1 hover:text-[#0a0e27]">★ StarBot (AI Chatbots)</a>
+        <a href="starlead.html" class="block py-1 hover:text-[#0a0e27]">★ StarLead (Cold Outbound)</a>
+        <a href="starbook.html" class="block py-1 hover:text-[#0a0e27]">★ StarBook (Appointment Booking)</a>
+        <a href="starmail.html" class="block py-1 hover:text-[#0a0e27]">★ StarMail (Email Marketing)</a>
+        <a href="starflow.html" class="block py-1 hover:text-[#0a0e27]">★ StarFlow (Workflow Automation)</a>
+        <a href="starads.html" class="block py-1 hover:text-[#0a0e27]">★ StarAds (AI-Assisted Ads)</a>
+      </div>
+      <a href="case-studies.html" class="block font-medium text-[#0a0e27] py-2 border-b border-slate-100">Case Studies</a>
+      <a href="about.html" class="block font-medium text-[#0a0e27] py-2 border-b border-slate-100">About</a>
+      <a href="contact.html" class="block font-medium text-[#0a0e27] py-2 border-b border-slate-100">Contact</a>
+      <div class="pt-2">
+        <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold w-full text-center py-3 rounded-xl">
+          Book a Free Call
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="py-24 sm:py-28 bg-white corporate-bg-pattern border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8"><div class="max-w-3xl">
+        <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-4">LEGAL</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-bold tracking-tight text-[#0a0e27] leading-tight mb-6">Terms of Service</h1>
+        <p class="text-[18px] sm:text-[20px] text-[#64748b] leading-[1.7] max-w-2xl">Last updated: October 2026. A plain-English summary of how we work together.</p>
+      </div></div>
+    </section>
+    <section class="py-20 sm:py-24 bg-white border-b border-[#e2e8f0]"><div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8"><div class="max-w-3xl space-y-10"><section class="reveal"><h2 class="text-xl font-bold mb-3">1. Our services</h2><div class="text-[16px] text-[#475569] space-y-3 leading-relaxed"><p>Starion AI provides AI chatbot, lead generation, booking, email marketing, workflow automation and advertising-management services as described on this website and in your written quote or proposal. The quote is the source of truth for scope and price.</p></div></section><section class="reveal"><h2 class="text-xl font-bold mb-3">2. Pricing and payment</h2><div class="text-[16px] text-[#475569] space-y-3 leading-relaxed"><p>Each service has a one-off setup fee and, where applicable, a monthly fee. Setup fees are due before work begins unless agreed otherwise. Monthly fees are billed in advance. Third-party costs (for example ad spend, software subscriptions and messaging fees) are paid by you directly unless the quote says otherwise.</p></div></section><section class="reveal"><h2 class="text-xl font-bold mb-3">3. Term and cancellation</h2><div class="text-[16px] text-[#475569] space-y-3 leading-relaxed"><p>Monthly plans roll month to month. You may cancel with 30 days' written notice. Setup fees are non-refundable once work has started, except where we fail to deliver the agreed scope.</p></div></section><section class="reveal"><h2 class="text-xl font-bold mb-3">4. Your responsibilities</h2><div class="text-[16px] text-[#475569] space-y-3 leading-relaxed"><p>You will provide accurate information and access we reasonably need, and you are responsible for having the right to contact the people whose data you ask us to process (including consent and marketing-law compliance such as CAN-SPAM, GDPR and PECR).</p></div></section><section class="reveal"><h2 class="text-xl font-bold mb-3">5. No guarantees</h2><div class="text-[16px] text-[#475569] space-y-3 leading-relaxed"><p>We work hard to deliver strong results, but we cannot guarantee specific outcomes such as lead volumes, revenue, rankings or ad performance, which depend on factors outside our control. AI systems can make mistakes; you should review outputs that matter.</p></div></section><section class="reveal"><h2 class="text-xl font-bold mb-3">6. Ownership</h2><div class="text-[16px] text-[#475569] space-y-3 leading-relaxed"><p>You own your data and content. Once paid in full you may use the deliverables built for you. We keep ownership of our pre-existing tools, templates and know-how.</p></div></section><section class="reveal"><h2 class="text-xl font-bold mb-3">7. Liability</h2><div class="text-[16px] text-[#475569] space-y-3 leading-relaxed"><p>To the extent permitted by law, our total liability for any claim is limited to the fees you paid us in the three months before the claim, and we are not liable for indirect or consequential losses.</p></div></section><section class="reveal"><h2 class="text-xl font-bold mb-3">8. Changes and contact</h2><div class="text-[16px] text-[#475569] space-y-3 leading-relaxed"><p>We may update these terms and will post the new date above. Questions? Email <a class="text-[#f59e0b] underline" href="mailto:piyanshusingh2007@gmail.com">piyanshusingh2007@gmail.com</a>.</p></div></section></div></div></section>
+  </main>
+
+  <footer class="bg-white border-t border-[#e2e8f0] pt-16 sm:pt-20 pb-12">
+    <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-16 border-b border-[#e2e8f0]">
+        
+        <!-- Column 1: Brand & Tagline -->
+        <div>
+          <a href="index.html" class="flex items-center gap-2 mb-3">
+            <img src="assets/images/starion-logo.jpg" onerror="this.onerror=null;this.src='assets/images/starion-logo.svg'" alt="Starion AI" class="h-9 w-auto object-contain" />
+          </a>
+          <p class="text-xs font-semibold uppercase tracking-wider text-[#f59e0b] mb-2">AI Automation That Shines</p>
+          <p class="text-[14px] text-[#64748b] leading-relaxed mb-4">
+            Enterprise-grade AI systems that help businesses get more customers and eliminate manual work.
+          </p>
+          <p class="text-xs text-[#64748b]">Serving businesses globally &bull; Founded by Piyanshu Singh</p>
+        </div>
+
+        <!-- Column 2: Services (6 links) -->
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-[#0a0e27] mb-4">Services</h3>
+          <ul class="space-y-2.5 text-[14px]">
+            <li><a href="starbot.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">StarBot — AI Chatbots</a></li>
+            <li><a href="starlead.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">StarLead — Lead Generation</a></li>
+            <li><a href="starbook.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">StarBook — Bookings</a></li>
+            <li><a href="starmail.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">StarMail — Email Marketing</a></li>
+            <li><a href="starflow.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">StarFlow — Workflows</a></li>
+            <li><a href="starads.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">StarAds — AI-Managed Ads</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-[#0a0e27] mb-4">Company</h3>
+          <ul class="space-y-2.5 text-[14px]">
+            <li><a href="about.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">About Us</a></li>
+            <li><a href="case-studies.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">Case Studies</a></li>
+            <li><a href="services.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">Services Overview</a></li>
+            <li><a href="contact.html" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">Contact</a></li>
+            <li><a href="https://starion-ai.notion.site" target="_blank" rel="noopener noreferrer" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">Knowledge Base (Notion)</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Booking -->
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-[#0a0e27] mb-4">Get in Touch</h3>
+          <ul class="space-y-2.5 text-[14px] text-[#64748b]">
+            <li>
+              <span class="block text-xs text-[#0a0e27] font-semibold">Email:</span>
+              <a href="mailto:piyanshusingh2007@gmail.com" class="hover:text-[#0a0e27] underline transition-colors">piyanshusingh2007@gmail.com</a>
+            </li>
+            <li>
+              <span class="block text-xs text-[#0a0e27] font-semibold">Phone / WhatsApp:</span>
+              <a href="tel:+919990688580" class="hover:text-[#0a0e27] transition-colors">+91 9990688580</a>
+            </li>
+            <li>
+              <span class="block text-xs text-[#0a0e27] font-semibold">Direct Booking:</span>
+              <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="text-[#f59e0b] font-medium hover:underline">Schedule 15-Min Meeting &rarr;</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom row -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#64748b] gap-4">
+        <p>© 2026 Starion AI. All rights reserved.</p>
+        <p>Light, clean, enterprise AI engineering &bull; Global Operations</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Inline Script (TypeScript / ES6) Handling Interactions & Animations -->
+  <script>
+    window.addEventListener('pageshow', () => document.body.classList.remove('page-fade-out'));
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Scroll Progress Bar
+      const progressBar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        if (progressBar) progressBar.style.width = progress + '%';
+      });
+
+      // 2. Navigation Background on Scroll
+      const nav = document.querySelector('.site-nav');
+      const handleNavScroll = () => {
+        if (window.scrollY > 20) {
+          nav?.classList.add('scrolled');
+        } else {
+          nav?.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', handleNavScroll);
+      handleNavScroll();
+
+      // 3. Mobile Navigation Drawer Toggle
+      const mobileToggle = document.getElementById('mobile-toggle');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      if (mobileToggle && mobileDrawer) {
+        mobileToggle.addEventListener('click', () => {
+          const isHidden = mobileDrawer.classList.contains('hidden');
+          if (isHidden) {
+            mobileDrawer.classList.remove('hidden');
+          } else {
+            mobileDrawer.classList.add('hidden');
+          }
+        });
+      }
+
+      // 4. Smooth Page-to-Page Transition (Fade Out)
+      document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !link.target && !href.includes('calendly.com')) {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.classList.add('page-fade-out');
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300);
+          });
+        }
+      });
+
+      // 5. Scroll Reveal with Intersection Observer
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        reveals.forEach(el => revealObserver.observe(el));
+      } else {
+        reveals.forEach(el => el.classList.add('active'));
+      }
+
+      // 6. Number Count-up Animation
+      const countUpElements = document.querySelectorAll('[data-countup]');
+      if ('IntersectionObserver' in window) {
+        const countObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const target = parseInt(entry.target.getAttribute('data-countup'), 10);
+              const suffix = entry.target.getAttribute('data-suffix') || '';
+              const prefix = entry.target.getAttribute('data-prefix') || '';
+              let current = 0;
+              const duration = 1400;
+              const stepTime = Math.max(16, Math.floor(duration / (target || 1)));
+              const timer = setInterval(() => {
+                current += Math.ceil(target / 40);
+                if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+                }
+                entry.target.textContent = prefix + current + suffix;
+              }, stepTime);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.2 });
+
+        countUpElements.forEach(el => countObserver.observe(el));
+      }
+
+      // 7. FAQ Accordions (Smooth Open/Close)
+      document.querySelectorAll('.faq-header').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          const isOpen = item.classList.contains('open');
+          // Close all other items in the same container
+          const parent = item.parentElement;
+          if (parent) {
+            parent.querySelectorAll('.faq-item').forEach(other => {
+              if (other !== item) other.classList.remove('open');
+            });
+          }
+          if (isOpen) {
+            item.classList.remove('open');
+          } else {
+            item.classList.add('open');
+          }
+        });
+      });
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    });
+  </script>
+
+  <!-- Botpress webchat -->
+  <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2026/10/27/23/20261027232329-FPGOSF5E.js" defer></script>
+<script src="assets/js/demo-chat.js" defer></script>
+</body>
+</html>
