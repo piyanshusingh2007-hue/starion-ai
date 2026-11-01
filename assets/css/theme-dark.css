@@ -106,3 +106,9 @@ main h1{background:none!important;-webkit-text-fill-color:initial!important}
 .sb-grad{background:linear-gradient(135deg,#60a5fa,#a78bfa,#60a5fa);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:sb-gradient 3s ease infinite;filter:drop-shadow(0 0 18px rgba(100,150,255,.45))}
 @keyframes sb-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .sb-float{animation:sb-float 6s ease-in-out infinite}
+
+/* dentist demo page: chat bubbles, chips, phone mockup */
+.msg-bot,.chat-chip,.cal-slot,.inbox-item,.phone,.phone-chat,.chat-shell{background:rgba(20,20,40,.7)!important;border-color:rgba(100,150,255,.25)!important;color:var(--sb-fg)!important}
+.msg-card{background:rgba(0,161,255,.12)!important;border-color:rgba(0,161,255,.4)!important;color:var(--sb-fg)!important}
+.chat-chip:hover{background:rgba(0,161,255,.18)!important;border-color:var(--sb-blue)!important}
+.phone{border-color:#1e2547!important}

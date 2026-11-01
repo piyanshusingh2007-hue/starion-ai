@@ -6,3 +6,13 @@
   from = "/api/chat"
   to = "/.netlify/functions/chat"
   status = 200
+
+[[redirects]]
+  from = "/dentist"
+  to = "/dentist.html"
+  status = 200
+
+[[redirects]]
+  from = "/dental"
+  to = "/dentist.html"
+  status = 200

@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=2f1480c4-2363-4cef-b451-fafda7e6cf3c
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Receptionist for Dental Practices | StarBot by Starion AI</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta name="description" content="Never miss another new-patient enquiry. StarBot answers patient questions 24/7, captures enquiries, and books appointments directly into your calendar.">
+  <meta name="keywords" content="Starion AI, AI Automation Agency, AI Chatbots, StarBot, StarLead, StarBook, StarMail, StarFlow, StarAds, Workflow Automation, Piyanshu Singh">
+  <meta name="author" content="Piyanshu Singh">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Receptionist for Dental Practices | StarBot by Starion AI">
+  <meta property="og:description" content="Never miss another new-patient enquiry. StarBot answers patient questions 24/7, captures enquiries, and books appointments directly into your calendar.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Starion AI">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#0a0e27',
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              800: '#111739',
+              900: '#0a0e27'
+            },
+            surface: '#f8fafc',
+            bordercol: '#e2e8f0',
+            gold: {
+              DEFAULT: '#f59e0b',
+              hover: '#d97706',
+              light: '#fef3c7',
+              muted: '#fbbf24'
+            },
+            secondary: '#64748b'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Inline Core CSS Design System -->
+  <style>
+    /* CSS Reset & Design Tokens */
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --border: #e2e8f0;
+      --text-primary: #0a0e27;
+      --text-secondary: #64748b;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #ffffff;
+      color: #0a0e27;
+      line-height: 1.7;
+      font-size: 17px;
+      overflow-x: hidden;
+      opacity: 0;
+      animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .page-fade-out {
+      opacity: 0 !important;
+      transform: translateY(-6px) !important;
+      transition: opacity 0.35s ease, transform 0.35s ease !important;
+    }
+
+    /* Scroll progress bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: #f59e0b;
+      z-index: 99999;
+      width: 0%;
+      transition: width 0.1s ease-out;
+    }
+
+    /* Global Nav Styling */
+    .site-nav {
+      transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .site-nav.scrolled {
+      background-color: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px -2px rgba(10, 14, 39, 0.04);
+    }
+
+    /* Animated Link Underline */
+    .animated-link {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .animated-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #f59e0b;
+      transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .animated-link:hover::after,
+    .animated-link.active::after {
+      width: 100%;
+    }
+
+    /* Card Hover Lift & Border Color Shift */
+    .star-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 32px;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .star-card:hover {
+      transform: translateY(-6px);
+      border-color: #f59e0b;
+      box-shadow: 0 12px 30px -10px rgba(10, 14, 39, 0.06);
+    }
+
+    /* Button Hover Micro-Interactions */
+    .btn-gold {
+      background-color: #f59e0b;
+      color: #0a0e27;
+      font-weight: 600;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-gold:hover {
+      background-color: #d97706;
+      transform: scale(1.02);
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+      color: #ffffff;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid #0a0e27;
+      color: #0a0e27;
+      font-weight: 600;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-outline:hover {
+      background-color: #0a0e27;
+      color: #ffffff;
+      transform: scale(1.02);
+      box-shadow: 0 4px 14px rgba(10, 14, 39, 0.15);
+    }
+
+    /* Form Input Glow Transition */
+    .form-input {
+      width: 100%;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 16px;
+      color: #0a0e27;
+      background-color: #f8fafc;
+      transition: all 0.25s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #f59e0b;
+      background-color: #ffffff;
+      box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
+    }
+
+    /* Scroll Reveal Initial States */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered card delays */
+    .stagger-1 { transition-delay: 0.08s; }
+    .stagger-2 { transition-delay: 0.16s; }
+    .stagger-3 { transition-delay: 0.24s; }
+    .stagger-4 { transition-delay: 0.32s; }
+    .stagger-5 { transition-delay: 0.40s; }
+    .stagger-6 { transition-delay: 0.48s; }
+
+    /* FAQ Accordion Transitions */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      opacity: 1;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(180deg);
+      color: #f59e0b;
+    }
+
+    /* Step Diagram Line */
+    .step-connector {
+      position: absolute;
+      left: 23px;
+      top: 48px;
+      bottom: -16px;
+      width: 2px;
+      background-color: #e2e8f0;
+    }
+
+    /* Abstract Soft Grid Background */
+    .corporate-bg-pattern {
+      background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Typist Cursor */
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      vertical-align: middle;
+      background-color: #f59e0b;
+      margin-left: 4px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Accessible prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      body {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .typing-cursor {
+        display: none !important;
+      }
+    }
+
+    /* Dental page: live demo chat */
+    .chat-log { height: 360px; overflow-y: auto; scroll-behavior: smooth; }
+    .msg { max-width: 85%; padding: 10px 14px; border-radius: 16px; font-size: 15px; line-height: 1.5; animation: msgIn 0.3s cubic-bezier(0.16, 1, 0.3, 1); white-space: pre-wrap; }
+    .msg-bot { background: #ffffff; border: 1px solid #e2e8f0; color: #0a0e27; border-bottom-left-radius: 4px; }
+    .msg-user { background: #0a0e27; color: #ffffff; margin-left: auto; border-bottom-right-radius: 4px; }
+    .msg-card { max-width: 85%; border: 1px solid #fcd34d; background: #fffbeb; border-radius: 14px; padding: 12px 14px; font-size: 14px; color: #0a0e27; animation: msgIn 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .msg-typing { display: inline-flex; gap: 4px; padding: 14px; }
+    .msg-typing span { width: 6px; height: 6px; border-radius: 50%; background: #94a3b8; animation: typing 1s infinite; }
+    .msg-typing span:nth-child(2) { animation-delay: 0.15s; }
+    .msg-typing span:nth-child(3) { animation-delay: 0.3s; }
+    .chat-chip { font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid #e2e8f0; color: #0a0e27; background: #ffffff; transition: all 0.2s ease; }
+    .chat-chip:hover { border-color: #f59e0b; background: #fffbeb; }
+    @keyframes msgIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes typing { 0%, 60%, 100% { opacity: 0.3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
+
+    /* Dental page: demo reel */
+    .phone { width: 280px; height: 540px; background: #ffffff; border-radius: 36px; border: 8px solid #1e2547; position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5); }
+    .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 90px; height: 18px; background: #1e2547; border-radius: 0 0 12px 12px; z-index: 2; }
+    .phone-top { display: flex; justify-content: space-between; align-items: center; padding: 22px 16px 6px; font-size: 11px; font-weight: 600; color: #0a0e27; }
+    .phone-head { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-bottom: 1px solid #e2e8f0; }
+    .phone-chat { flex: 1; overflow: hidden; padding: 12px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; background: #f8fafc; }
+    .phone-chat .msg { font-size: 12.5px; padding: 8px 11px; border-radius: 14px; }
+    .phone-chat .msg-card { font-size: 12px; padding: 10px; }
+    .cal-slot { padding: 8px 10px; border-radius: 8px; background: #ffffff; border: 1px solid #e2e8f0; color: #64748b; transition: all 0.4s ease; }
+    .cal-new.filled { background: #fef3c7; border-color: #f59e0b; color: #0a0e27; box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15); }
+    .inbox-item { padding: 10px; border-radius: 8px; background: #ffffff; border: 1px solid #e2e8f0; color: #0a0e27; animation: msgIn 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+  </style>
+  <link rel="stylesheet" href="assets/css/theme-dark.css">
+  <script src="assets/js/theme-fx.js" defer></script>
+</head>
+<body class="bg-white text-[#0a0e27] antialiased">
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+
+  <!-- Global Top Sticky Navigation -->
+  <header class="site-nav sticky top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-transparent transition-all duration-300">
+    <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a aria-label='Starion AI Home' class='flex items-center gap-2 group transition-transform duration-200 hover:scale-[1.01]' href='/'>
+        <img src="assets/images/starion-logo.jpg" onerror="this.onerror=null;this.src='assets/images/starion-logo.svg'" alt="Starion AI" class="h-9 w-auto object-contain" />
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-[#64748b]">
+        <a class='animated-link py-1 hover:text-[#0a0e27] text-[#0a0e27] active font-semibold' href='/services'>Services</a>
+        <a class='animated-link py-1 hover:text-[#0a0e27] ' href='/case-studies'>Case Studies</a>
+        <a class='animated-link py-1 hover:text-[#0a0e27] ' href='/about'>About</a>
+        <a class='animated-link py-1 hover:text-[#0a0e27] ' href='/contact'>Contact</a>
+      </nav>
+
+      <!-- Right CTA -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold text-[15px] px-6 py-2.5 rounded-xl shadow-sm">
+          Book a Free Call
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-toggle" type="button" aria-label="Toggle navigation menu" class="md:hidden p-2 text-[#0a0e27] hover:text-[#f59e0b] focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden md:hidden bg-white border-b border-[#e2e8f0] px-6 py-6 shadow-xl space-y-4">
+      <a class='block font-medium text-[#0a0e27] py-2 border-b border-slate-100' href='/services'>Services Overview</a>
+      <div class="pl-4 space-y-2 text-sm text-[#64748b]">
+        <a class='block py-1 hover:text-[#0a0e27]' href='/starbot'>★ StarBot (AI Chatbots)</a>
+        <a class='block py-1 hover:text-[#0a0e27]' href='/starlead'>★ StarLead (Cold Outbound)</a>
+        <a class='block py-1 hover:text-[#0a0e27]' href='/starbook'>★ StarBook (Appointment Booking)</a>
+        <a class='block py-1 hover:text-[#0a0e27]' href='/starmail'>★ StarMail (Email Marketing)</a>
+        <a class='block py-1 hover:text-[#0a0e27]' href='/starflow'>★ StarFlow (Workflow Automation)</a>
+        <a class='block py-1 hover:text-[#0a0e27]' href='/starads'>★ StarAds (AI-Assisted Ads)</a>
+      </div>
+      <a class='block font-medium text-[#0a0e27] py-2 border-b border-slate-100' href='/case-studies'>Case Studies</a>
+      <a class='block font-medium text-[#0a0e27] py-2 border-b border-slate-100' href='/about'>About</a>
+      <a class='block font-medium text-[#0a0e27] py-2 border-b border-slate-100' href='/contact'>Contact</a>
+      <div class="pt-2">
+        <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold w-full text-center py-3 rounded-xl">
+          Book a Free Call
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+    <!-- 1. HERO + LIVE DEMO CHAT -->
+    <section class="py-16 sm:py-24 bg-white corporate-bg-pattern border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-4">StarBot for dental practices</span>
+            <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#0a0e27] leading-[1.1] mb-5">
+              Never miss another new-patient enquiry.
+            </h1>
+            <p class="text-[18px] sm:text-[20px] text-[#64748b] leading-[1.7] mb-8">
+              StarBot answers patient questions 24/7, captures enquiries, and books appointments directly into your calendar.
+            </p>
+            <ul class="space-y-3 mb-9">
+              <li class="flex items-center gap-3 text-[17px] font-semibold text-[#0a0e27]">
+                <span class="w-7 h-7 rounded-full bg-amber-50 border border-amber-200 text-[#f59e0b] flex items-center justify-center text-sm font-bold flex-shrink-0">✓</span>
+                Answers after hours
+              </li>
+              <li class="flex items-center gap-3 text-[17px] font-semibold text-[#0a0e27]">
+                <span class="w-7 h-7 rounded-full bg-amber-50 border border-amber-200 text-[#f59e0b] flex items-center justify-center text-sm font-bold flex-shrink-0">✓</span>
+                Books appointments
+              </li>
+              <li class="flex items-center gap-3 text-[17px] font-semibold text-[#0a0e27]">
+                <span class="w-7 h-7 rounded-full bg-amber-50 border border-amber-200 text-[#f59e0b] flex items-center justify-center text-sm font-bold flex-shrink-0">✓</span>
+                Reduces missed enquiries
+              </li>
+            </ul>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+              <a href="#free-demo" class="btn-gold text-[16px] px-8 py-4 rounded-xl shadow-sm">Get a free website demo</a>
+              <span class="text-sm text-[#64748b]">Built with your services &amp; opening hours. No call needed.</span>
+            </div>
+          </div>
+
+          <!-- Live demo chat widget -->
+          <div class="lg:col-span-6" id="live-demo">
+            <div class="chat-shell rounded-2xl border border-[#e2e8f0] bg-white shadow-[0_24px_60px_-20px_rgba(10,14,39,0.18)] overflow-hidden">
+              <div class="flex items-center justify-between gap-3 px-5 py-4 bg-[#0a0e27] text-white">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-[#f59e0b] text-[#0a0e27] flex items-center justify-center font-bold">★</div>
+                  <div class="leading-tight">
+                    <p class="font-semibold text-[15px]">Brightside Dental</p>
+                    <p class="text-xs text-slate-300 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span> StarBot &middot; replies instantly</p>
+                  </div>
+                </div>
+                <span class="text-[11px] font-bold uppercase tracking-wider bg-white/10 text-[#fbbf24] px-2.5 py-1 rounded-full">Live demo</span>
+              </div>
+              <div id="chat-log" class="chat-log px-4 sm:px-5 py-5 space-y-3 bg-[#f8fafc]" aria-live="polite" aria-label="Demo conversation"></div>
+              <div id="chat-chips" class="flex flex-wrap gap-2 px-4 sm:px-5 pt-3 pb-1 bg-white border-t border-[#e2e8f0]">
+                <button type="button" class="chat-chip">Do you take new patients?</button>
+                <button type="button" class="chat-chip">How much is teeth whitening?</button>
+                <button type="button" class="chat-chip">Book a check-up</button>
+                <button type="button" class="chat-chip">Can I speak to a person?</button>
+              </div>
+              <form id="chat-form" class="flex items-center gap-2 px-4 sm:px-5 py-4 bg-white" autocomplete="off">
+                <label for="chat-input" class="sr-only">Ask the receptionist a question</label>
+                <input id="chat-input" class="form-input !py-3" maxlength="500" placeholder="Ask anything a patient would…" />
+                <button type="submit" id="chat-send" class="btn-gold px-5 py-3 rounded-xl text-[15px] flex-shrink-0" aria-label="Send">Send</button>
+              </form>
+            </div>
+            <p class="mt-3 text-xs text-[#64748b] text-center">Try it like a patient would. Brightside Dental is a sample practice, so no real appointments are booked.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. DEMO REEL (75 seconds) -->
+    <section id="demo-video" class="py-24 sm:py-28 bg-[#f8fafc] border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-12 reveal">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">75-second demo</span>
+          <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight">
+            11:47 pm. The practice is closed. A new patient books anyway.
+          </h2>
+          <p class="mt-3 text-[17px] text-[#64748b]">
+            Watch a real after-hours enquiry go from first question to a confirmed appointment in your diary, with no one on reception.
+          </p>
+        </div>
+
+        <div class="reel reveal rounded-2xl border border-[#e2e8f0] bg-white shadow-sm overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12">
+            <!-- Phone -->
+            <div class="lg:col-span-5 bg-[#0a0e27] p-6 sm:p-10 flex items-center justify-center relative">
+              <div class="phone">
+                <div class="phone-notch"></div>
+                <div class="phone-top">
+                  <span id="reel-clock">11:47</span>
+                  <span class="text-[10px] text-slate-400">brightsidedental.co.uk</span>
+                </div>
+                <div class="phone-head">
+                  <div class="w-7 h-7 rounded-full bg-[#f59e0b] text-[#0a0e27] flex items-center justify-center text-xs font-bold">★</div>
+                  <div class="leading-tight">
+                    <p class="text-[12px] font-semibold text-[#0a0e27]">Brightside Dental</p>
+                    <p class="text-[10px] text-emerald-600">StarBot &middot; online</p>
+                  </div>
+                </div>
+                <div id="reel-chat" class="phone-chat"></div>
+              </div>
+            </div>
+            <!-- Practice side -->
+            <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col">
+              <p id="reel-caption-kicker" class="text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-2">Practice closed</p>
+              <p id="reel-caption" class="text-[22px] sm:text-[26px] font-semibold text-[#0a0e27] leading-snug min-h-[72px]">A patient with toothache lands on your website late at night.</p>
+
+              <div class="mt-8 grid sm:grid-cols-2 gap-4 flex-1">
+                <div class="rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-5">
+                  <p class="text-xs font-bold uppercase tracking-wider text-[#64748b] mb-3">Your calendar &middot; Wednesday</p>
+                  <div class="space-y-2 text-[13px]">
+                    <div class="cal-slot">08:30 &middot; Hygienist &middot; booked</div>
+                    <div class="cal-slot">09:15 &middot; Check-up &middot; booked</div>
+                    <div id="reel-cal-new" class="cal-slot cal-new">10:15 &middot; <span class="font-semibold">Open</span></div>
+                    <div class="cal-slot">11:00 &middot; Filling &middot; booked</div>
+                  </div>
+                </div>
+                <div class="rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-5">
+                  <p class="text-xs font-bold uppercase tracking-wider text-[#64748b] mb-3">Practice inbox</p>
+                  <div id="reel-inbox" class="space-y-2 text-[13px]">
+                    <p class="text-[#94a3b8] italic">No new messages</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 flex items-center gap-4">
+                <button type="button" id="reel-toggle" class="w-11 h-11 rounded-full bg-[#0a0e27] text-white flex items-center justify-center hover:bg-[#f59e0b] hover:text-[#0a0e27] transition-colors flex-shrink-0" aria-label="Play demo">
+                  <svg id="reel-icon-play" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg id="reel-icon-pause" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+                </button>
+                <div class="flex-1 h-1.5 rounded-full bg-[#e2e8f0] overflow-hidden">
+                  <div id="reel-progress" class="h-full bg-[#f59e0b] w-0"></div>
+                </div>
+                <span id="reel-time" class="text-xs font-mono text-[#64748b] tabular-nums">0:00 / 1:15</span>
+                <button type="button" id="reel-restart" class="text-xs font-semibold text-[#64748b] hover:text-[#0a0e27]">Replay</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CASE STUDY -->
+    <section class="py-24 sm:py-28 bg-white border-b border-[#e2e8f0]">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-5 reveal">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">Dental case study</span>
+            <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight mb-6">
+              23 extra appointments in 30 days
+            </h2>
+            <div class="rounded-2xl bg-[#0a0e27] text-white p-8">
+              <p class="text-[56px] font-bold leading-none text-[#f59e0b]"><span data-countup="23">23</span></p>
+              <p class="mt-2 text-[15px] text-slate-300">extra appointments booked by StarBot in the first 30 days, with no extra reception hours.</p>
+            </div>
+          </div>
+          <div class="lg:col-span-7 space-y-5 reveal stagger-2">
+            <div class="star-card !p-7">
+              <h3 class="text-[17px] font-bold text-[#0a0e27] mb-2">The problem</h3>
+              <p class="text-[16px] text-[#64748b] leading-relaxed">A busy clinic was missing after-hours enquiries. Patients who found the website in the evening hit a voicemail or a contact form, and many had booked elsewhere before reception could call back the next morning.</p>
+            </div>
+            <div class="star-card !p-7">
+              <h3 class="text-[17px] font-bold text-[#0a0e27] mb-2">What we installed</h3>
+              <p class="text-[16px] text-[#64748b] leading-relaxed">StarBot was trained on the clinic's treatments, prices, opening hours and FAQs, then connected to its booking calendar. Anything clinical or complex was handed to the team for a callback.</p>
+            </div>
+            <div class="star-card !p-7">
+              <h3 class="text-[17px] font-bold text-[#0a0e27] mb-2">The result</h3>
+              <p class="text-[16px] text-[#64748b] leading-relaxed">StarBot answered patient questions and booked consultations automatically, day and night. Reception started each morning with new bookings already in the diary instead of a backlog of messages to return.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FREE MOCK-UP OFFER -->
+    <section id="free-demo" class="py-24 sm:py-28 bg-[#f8fafc] border-b border-[#e2e8f0] scroll-mt-20">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-5 reveal">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">Free mock-up</span>
+            <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight mb-6">
+              See it working on your practice first.
+            </h2>
+            <blockquote class="border-l-4 border-[#f59e0b] pl-5 text-[18px] text-[#0a0e27] leading-relaxed font-medium mb-6">
+              &ldquo;I&rsquo;ll build a working demo of the AI receptionist using your practice&rsquo;s services and opening hours. If you like it, we can discuss installing it.&rdquo;
+              <footer class="mt-3 text-sm text-[#64748b] font-normal">Piyanshu Singh, founder of Starion AI</footer>
+            </blockquote>
+            <ul class="space-y-3 text-[15px] text-[#64748b]">
+              <li class="flex gap-3"><span class="text-[#f59e0b] font-bold">1.</span>Tell us your practice name and website.</li>
+              <li class="flex gap-3"><span class="text-[#f59e0b] font-bold">2.</span>We build a private demo trained on your services, prices and hours.</li>
+              <li class="flex gap-3"><span class="text-[#f59e0b] font-bold">3.</span>You get a link to try it. No call, no commitment.</li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-7 reveal stagger-2">
+            <form id="demo-form" name="dental-demo" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="p-7 sm:p-10 rounded-2xl bg-white border border-[#e2e8f0] shadow-sm space-y-5">
+              <input type="hidden" name="form-name" value="dental-demo">
+              <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div><label class="block text-sm font-semibold mb-2" for="d-name">Your name</label><input class="form-input" id="d-name" name="name" required autocomplete="name"></div>
+                <div><label class="block text-sm font-semibold mb-2" for="d-email">Email</label><input class="form-input" id="d-email" type="email" name="email" required autocomplete="email"></div>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div><label class="block text-sm font-semibold mb-2" for="d-practice">Practice name</label><input class="form-input" id="d-practice" name="practice" required autocomplete="organization"></div>
+                <div><label class="block text-sm font-semibold mb-2" for="d-website">Practice website</label><input class="form-input" id="d-website" name="website" required placeholder="www.yourpractice.co.uk" autocomplete="url"></div>
+              </div>
+              <div><label class="block text-sm font-semibold mb-2" for="d-hours">Opening hours <span class="font-normal text-[#64748b]">(optional, we can read them from your site)</span></label><textarea class="form-input" id="d-hours" name="opening_hours" rows="2" placeholder="Mon–Fri 8:30–17:30, Sat 9–13"></textarea></div>
+              <div><label class="block text-sm font-semibold mb-2" for="d-notes">Anything patients ask a lot? <span class="font-normal text-[#64748b]">(optional)</span></label><textarea class="form-input" id="d-notes" name="notes" rows="3" placeholder="e.g. Invisalign pricing, emergency appointments, finance options"></textarea></div>
+              <button type="submit" class="btn-gold w-full px-8 py-4 rounded-xl text-[16px]">Get a free website demo</button>
+              <p id="demo-form-status" class="text-sm text-center" role="status" aria-live="polite"></p>
+              <p class="text-xs text-[#64748b] text-center">We use these details only to build your demo. See our <a class='underline' href='/privacy'>privacy policy</a>.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FAQ -->
+    <section class="py-24 sm:py-28 bg-white">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-12 reveal">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">Questions practices ask</span>
+          <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight">FAQ</h2>
+        </div>
+        <div class="max-w-3xl space-y-4 reveal">
+          <div class="faq-item border border-[#e2e8f0] rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-200">
+            <button type="button" class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-[#0a0e27] text-[17px] hover:text-[#f59e0b] focus:outline-none">
+              <span>Is patient data kept private?</span>
+              <span class="faq-icon text-[#64748b] text-xl">&darr;</span>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-[15px] text-[#64748b] leading-relaxed border-t border-slate-100/60 pt-4">
+              Yes. StarBot only collects what's needed to handle the enquiry (name, contact details and appointment preference) and never asks for medical history or card details in chat. Your practice stays the data controller, we act as processor, and enquiry data is sent only to your own calendar, inbox or CRM. Full details are in our <a class='underline' href='/privacy'>privacy policy</a>.
+            </div>
+          </div>
+          <div class="faq-item border border-[#e2e8f0] rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-200">
+            <button type="button" class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-[#0a0e27] text-[17px] hover:text-[#f59e0b] focus:outline-none">
+              <span>What happens when a patient needs a real person?</span>
+              <span class="faq-icon text-[#64748b] text-xl">&darr;</span>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-[15px] text-[#64748b] leading-relaxed border-t border-slate-100/60 pt-4">
+              StarBot hands over. Clinical questions, complaints, or anything it isn't sure about are passed to your team with the patient's name, number and a summary of the chat, so reception can call back without asking everything again. Urgent symptoms are directed to your emergency line or emergency services.
+            </div>
+          </div>
+          <div class="faq-item border border-[#e2e8f0] rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-200">
+            <button type="button" class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-[#0a0e27] text-[17px] hover:text-[#f59e0b] focus:outline-none">
+              <span>Does it work with our calendar or practice software?</span>
+              <span class="faq-icon text-[#64748b] text-xl">&darr;</span>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-[15px] text-[#64748b] leading-relaxed border-t border-slate-100/60 pt-4">
+              StarBot books straight into Google Calendar, Outlook, Calendly or Cal.com, and only offers slots that are actually free. If your practice management system has an online booking link or API, we connect to that instead. Each booking can also trigger a confirmation and reminder for the patient.
+            </div>
+          </div>
+          <div class="faq-item border border-[#e2e8f0] rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-200">
+            <button type="button" class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-[#0a0e27] text-[17px] hover:text-[#f59e0b] focus:outline-none">
+              <span>How long does setup take?</span>
+              <span class="faq-icon text-[#64748b] text-xl">&darr;</span>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-[15px] text-[#64748b] leading-relaxed border-t border-slate-100/60 pt-4">
+              Your free demo is usually ready within 48 hours. Once you're happy, installing it on your website takes 48–72 hours. It's a single line of code, and we can add it for you or send it to your web developer.
+            </div>
+          </div>
+        </div>
+
+        <div class="max-w-3xl mt-12 reveal">
+          <a href="#free-demo" class="btn-gold text-[16px] px-8 py-4 rounded-xl shadow-sm">Get a free website demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Global Footer -->
+  <footer class="bg-white border-t border-[#e2e8f0] pt-16 sm:pt-20 pb-12">
+    <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-16 border-b border-[#e2e8f0]">
+        
+        <!-- Column 1: Brand & Tagline -->
+        <div>
+          <a class='flex items-center gap-2 mb-3' href='/'>
+            <img src="assets/images/starion-logo.jpg" onerror="this.onerror=null;this.src='assets/images/starion-logo.svg'" alt="Starion AI" class="h-9 w-auto object-contain" />
+          </a>
+          <p class="text-xs font-semibold uppercase tracking-wider text-[#f59e0b] mb-2">AI Automation That Shines</p>
+          <p class="text-[14px] text-[#64748b] leading-relaxed mb-4">
+            Enterprise-grade AI systems that help businesses get more customers and eliminate manual work.
+          </p>
+          <p class="text-xs text-[#64748b]">Serving businesses globally &bull; Founded by Piyanshu Singh</p>
+        </div>
+
+        <!-- Column 2: Services (6 links) -->
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-[#0a0e27] mb-4">Services</h3>
+          <ul class="space-y-2.5 text-[14px]">
+            <li><a class='text-[#64748b] hover:text-[#0a0e27] transition-colors' href='/starbot'>StarBot — AI Chatbots</a></li>
+            <li><a class='text-[#64748b] hover:text-[#0a0e27] transition-colors' href='/starlead'>StarLead — Lead Generation</a></li>
+            <li><a class='text-[#64748b] hover:text-[#0a0e27] transition-colors' href='/starbook'>StarBook — Bookings</a></li>
+            <li><a class='text-[#64748b] hover:text-[#0a0e27] transition-colors' href='/starmail'>StarMail — Email Marketing</a></li>
+            <li><a class='text-[#64748b] hover:text-[#0a0e27] transition-colors' href='/starflow'>StarFlow — Workflows</a></li>
+            <li><a class='text-[#64748b] hover:text-[#0a0e27] transition-colors' href='/starads'>StarAds — AI-Managed Ads</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-[#0a0e27] mb-4">Company</h3>
+          <ul class="space-y-2.5 text-[14px]">
+            <li><a class='text-[#64748b] hover:text-[#0a0e27] transition-colors' href='/about'>About Us</a></li>
+            <li><a class='text-[#64748b] hover:text-[#0a0e27] transition-colors' href='/case-studies'>Case Studies</a></li>
+            <li><a class='text-[#64748b] hover:text-[#0a0e27] transition-colors' href='/services'>Services Overview</a></li>
+            <li><a class='text-[#64748b] hover:text-[#0a0e27] transition-colors' href='/contact'>Contact</a></li>
+            <li><a href="https://starion-ai.notion.site" target="_blank" rel="noopener noreferrer" class="text-[#64748b] hover:text-[#0a0e27] transition-colors">Knowledge Base (Notion)</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Booking -->
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-[#0a0e27] mb-4">Get in Touch</h3>
+          <ul class="space-y-2.5 text-[14px] text-[#64748b]">
+            <li>
+              <span class="block text-xs text-[#0a0e27] font-semibold">Email:</span>
+              <a href="mailto:piyanshusingh2007@gmail.com" class="hover:text-[#0a0e27] underline transition-colors">piyanshusingh2007@gmail.com</a>
+            </li>
+            <li>
+              <span class="block text-xs text-[#0a0e27] font-semibold">Phone / WhatsApp:</span>
+              <a href="tel:+919990688580" class="hover:text-[#0a0e27] transition-colors">+91 9990688580</a>
+            </li>
+            <li>
+              <span class="block text-xs text-[#0a0e27] font-semibold">Direct Booking:</span>
+              <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="text-[#f59e0b] font-medium hover:underline">Schedule 15-Min Meeting &rarr;</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom row -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#64748b] gap-4">
+        <p>© 2026 Starion AI. All rights reserved.</p>
+        <p>Light, clean, enterprise AI engineering &bull; Global Operations</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Inline Script (TypeScript / ES6) Handling Interactions & Animations -->
+  <script>
+    window.addEventListener('pageshow', () => document.body.classList.remove('page-fade-out'));
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Scroll Progress Bar
+      const progressBar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        if (progressBar) progressBar.style.width = progress + '%';
+      });
+
+      // 2. Navigation Background on Scroll
+      const nav = document.querySelector('.site-nav');
+      const handleNavScroll = () => {
+        if (window.scrollY > 20) {
+          nav?.classList.add('scrolled');
+        } else {
+          nav?.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', handleNavScroll);
+      handleNavScroll();
+
+      // 3. Mobile Navigation Drawer Toggle
+      const mobileToggle = document.getElementById('mobile-toggle');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      if (mobileToggle && mobileDrawer) {
+        mobileToggle.addEventListener('click', () => {
+          const isHidden = mobileDrawer.classList.contains('hidden');
+          if (isHidden) {
+            mobileDrawer.classList.remove('hidden');
+          } else {
+            mobileDrawer.classList.add('hidden');
+          }
+        });
+      }
+
+      // 4. Smooth Page-to-Page Transition (Fade Out)
+      document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !link.target && !href.includes('calendly.com')) {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.classList.add('page-fade-out');
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300);
+          });
+        }
+      });
+
+      // 5. Scroll Reveal with Intersection Observer
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        reveals.forEach(el => revealObserver.observe(el));
+      } else {
+        reveals.forEach(el => el.classList.add('active'));
+      }
+
+      // 6. Number Count-up Animation
+      const countUpElements = document.querySelectorAll('[data-countup]');
+      if ('IntersectionObserver' in window) {
+        const countObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const target = parseInt(entry.target.getAttribute('data-countup'), 10);
+              const suffix = entry.target.getAttribute('data-suffix') || '';
+              const prefix = entry.target.getAttribute('data-prefix') || '';
+              let current = 0;
+              const duration = 1400;
+              const stepTime = Math.max(16, Math.floor(duration / (target || 1)));
+              const timer = setInterval(() => {
+                current += Math.ceil(target / 40);
+                if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+                }
+                entry.target.textContent = prefix + current + suffix;
+              }, stepTime);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.2 });
+
+        countUpElements.forEach(el => countObserver.observe(el));
+      }
+
+      // 7. FAQ Accordions (Smooth Open/Close)
+      document.querySelectorAll('.faq-header').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          const isOpen = item.classList.contains('open');
+          // Close all other items in the same container
+          const parent = item.parentElement;
+          if (parent) {
+            parent.querySelectorAll('.faq-item').forEach(other => {
+              if (other !== item) other.classList.remove('open');
+            });
+          }
+          if (isOpen) {
+            item.classList.remove('open');
+          } else {
+            item.classList.add('open');
+          }
+        });
+      });
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    });
+  </script>
+  <script>
+    // Live demo chat (StarBot as the receptionist for a sample practice)
+    (function () {
+      var log = document.getElementById('chat-log');
+      var form = document.getElementById('chat-form');
+      var input = document.getElementById('chat-input');
+      var send = document.getElementById('chat-send');
+      var chips = document.getElementById('chat-chips');
+      if (!log || !form) return;
+      var history = [];
+      var busy = false;
+
+      function scrollDown() { log.scrollTop = log.scrollHeight; }
+
+      function addBubble(role, text) {
+        var el = document.createElement('div');
+        el.className = 'msg ' + (role === 'user' ? 'msg-user' : 'msg-bot');
+        el.textContent = text;
+        log.appendChild(el);
+        scrollDown();
+      }
+
+      function addCard(html) {
+        var el = document.createElement('div');
+        el.className = 'msg-card';
+        el.innerHTML = html;
+        log.appendChild(el);
+        scrollDown();
+      }
+
+      function esc(s) {
+        return s.replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; });
+      }
+
+      // Bot replies may end with [[BOOKED|time|treatment|name]] or [[HANDOVER]] markers
+      function renderReply(reply) {
+        var booked = reply.match(/\[\[BOOKED\|([^|\]]*)\|([^|\]]*)\|([^\]]*)\]\]/);
+        var handover = /\[\[HANDOVER\]\]/.test(reply);
+        var text = reply.replace(/\[\[[^\]]*\]\]/g, '').trim();
+        if (text) addBubble('bot', text);
+        if (booked) {
+          addCard('<p class="text-[11px] font-bold uppercase tracking-wider text-[#d97706] mb-1">✓ Added to practice calendar</p>' +
+            '<p class="font-semibold">' + esc(booked[1].trim()) + ' &middot; ' + esc(booked[2].trim()) + '</p>' +
+            '<p class="text-[#64748b]">' + esc(booked[3].trim()) + ' &middot; confirmation sent</p>');
+        }
+        if (handover) {
+          addCard('<p class="text-[11px] font-bold uppercase tracking-wider text-[#d97706] mb-1">↪ Handed to the team</p>' +
+            '<p>Reception gets the chat summary and calls back.</p>');
+        }
+        return text || reply;
+      }
+
+      function ask(text) {
+        text = (text || '').trim();
+        if (!text || busy) return;
+        busy = true;
+        send.disabled = true;
+        if (chips) chips.classList.add('hidden');
+        addBubble('user', text);
+        history.push({ role: 'user', content: text });
+        var typing = document.createElement('div');
+        typing.className = 'msg msg-bot msg-typing';
+        typing.innerHTML = '<span></span><span></span><span></span>';
+        log.appendChild(typing);
+        scrollDown();
+
+        fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages: history })
+        })
+          .then(function (r) { return r.text().then(function (t) { var d = {}; try { d = JSON.parse(t); } catch (x) {} if (!r.ok || !d.reply) throw new Error('offline'); return d; }); })
+          .then(function (d) {
+            typing.remove();
+            history.push({ role: 'assistant', content: d.reply });
+            renderReply(d.reply);
+          })
+          .catch(function () {
+            typing.remove();
+            var q = text.toLowerCase(), out = "I'm the demo receptionist for Brightside Dental. Ask me about prices, opening hours or booking an appointment.";
+            if (/price|cost|how much|fee/.test(q)) out = "Exam with X-rays is $65, hygienist clean $75, fillings from $120, and the Invisalign consultation is free.";
+            else if (/hour|open|close/.test(q)) out = "We are open Mon-Thu 8:00-18:00, Fri 8:00-16:00 and Sat 9:00-13:00.";
+            else if (/book|appoint/.test(q)) out = "Happy to help. I can do Tuesday 9:30, Tuesday 14:15 or Thursday 11:00. Which suits you?";
+            history.push({ role: 'assistant', content: out });
+            renderReply(out);
+          })
+          .finally(function () { busy = false; send.disabled = false; input.focus({ preventScroll: true }); });
+      }
+
+      addBubble('bot', "Hi, I'm the Brightside Dental receptionist. I can answer questions about treatments, prices and opening hours, or book you in. How can I help?");
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var v = input.value;
+        input.value = '';
+        ask(v);
+      });
+      if (chips) {
+        chips.querySelectorAll('.chat-chip').forEach(function (chip) {
+          chip.addEventListener('click', function () { ask(chip.textContent); });
+        });
+      }
+    })();
+
+    // 75-second demo reel
+    (function () {
+      var chat = document.getElementById('reel-chat');
+      if (!chat) return;
+      var clock = document.getElementById('reel-clock');
+      var kicker = document.getElementById('reel-caption-kicker');
+      var caption = document.getElementById('reel-caption');
+      var calNew = document.getElementById('reel-cal-new');
+      var inbox = document.getElementById('reel-inbox');
+      var progress = document.getElementById('reel-progress');
+      var timeLabel = document.getElementById('reel-time');
+      var toggle = document.getElementById('reel-toggle');
+      var restart = document.getElementById('reel-restart');
+      var iconPlay = document.getElementById('reel-icon-play');
+      var iconPause = document.getElementById('reel-icon-pause');
+      var DURATION = 75;
+
+      var steps = [
+        { t: 0, run: function () { setCaption('Practice closed', 'A patient with toothache lands on your website late at night.'); } },
+        { t: 4, run: function () { msg('user', "Hi, do you take new patients? I've had a toothache for a few days 😣"); } },
+        { t: 9, run: function () { msg('bot', "Hi! Yes, we're welcoming new patients. Sorry to hear about the toothache. Emergency appointments are £95 and we can usually see you the next day. Shall I find you a slot?"); setCaption('Answers after hours', 'StarBot replies in seconds with your real prices and availability.'); } },
+        { t: 19, run: function () { msg('user', 'Yes please. Is tomorrow morning possible?'); } },
+        { t: 24, run: function () { msg('bot', 'Tomorrow (Wednesday) I have 10:15 or 12:30. Which suits you best?'); setCaption('Checks your calendar', 'Only genuinely free slots are offered, pulled live from your diary.'); } },
+        { t: 31, run: function () { msg('user', '10:15 please'); } },
+        { t: 35, run: function () { msg('bot', 'Perfect. Could I take your full name and mobile number?'); } },
+        { t: 41, run: function () { msg('user', 'Emma Clarke, 07700 900123'); clock.textContent = '11:49'; } },
+        { t: 46, run: function () {
+          card('✓ Booked', 'Wed 10:15 &middot; Emergency appointment', 'Emma Clarke &middot; SMS confirmation sent');
+          calNew.innerHTML = '10:15 &middot; <span class="font-semibold">Emergency &middot; Emma Clarke (new)</span>';
+          calNew.classList.add('filled');
+          setCaption('Books appointments', 'The appointment goes straight into your calendar. No double entry.');
+        } },
+        { t: 54, run: function () {
+          inbox.innerHTML = '';
+          inboxItem('<p class="font-semibold">New patient booked · 23:49</p><p class="text-[#64748b]">Emma Clarke · Emergency · Wed 10:15 · 07700 900123</p>');
+          setCaption('Your team is notified', 'Reception gets the details and a summary of the chat by email or SMS.');
+        } },
+        { t: 62, run: function () {
+          clock.textContent = '08:00';
+          inboxItem('<p class="font-semibold">2 more enquiries overnight</p><p class="text-[#64748b]">1 hygienist booking · 1 callback request (Invisalign)</p>');
+          setCaption('Reduces missed enquiries', 'Next morning: bookings already in the diary instead of a voicemail backlog.');
+        } },
+        { t: 70, run: function () { setCaption('Your practice, 24/7', 'Want to see this on your own website? Get a free demo below.'); } }
+      ];
+
+      function setCaption(k, c) { kicker.textContent = k; caption.textContent = c; }
+      function msg(role, text) {
+        var el = document.createElement('div');
+        el.className = 'msg ' + (role === 'user' ? 'msg-user' : 'msg-bot');
+        el.textContent = text;
+        chat.appendChild(el);
+      }
+      function card(title, line1, line2) {
+        var el = document.createElement('div');
+        el.className = 'msg-card';
+        el.innerHTML = '<p class="text-[10px] font-bold uppercase tracking-wider text-[#d97706] mb-1">' + title + '</p><p class="font-semibold">' + line1 + '</p><p class="text-[#64748b]">' + line2 + '</p>';
+        chat.appendChild(el);
+      }
+      function inboxItem(html) {
+        var el = document.createElement('div');
+        el.className = 'inbox-item';
+        el.innerHTML = html;
+        inbox.appendChild(el);
+      }
+
+      var elapsed = 0, next = 0, playing = false, last = 0, raf = 0;
+
+      function reset() {
+        chat.innerHTML = '';
+        inbox.innerHTML = '<p class="text-[#94a3b8] italic">No new messages</p>';
+        calNew.innerHTML = '10:15 &middot; <span class="font-semibold">Open</span>';
+        calNew.classList.remove('filled');
+        clock.textContent = '11:47';
+        elapsed = 0; next = 0;
+        tick(0);
+      }
+      function fmt(s) { s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+      function tick(dt) {
+        elapsed = Math.min(DURATION, elapsed + dt);
+        while (next < steps.length && steps[next].t <= elapsed) { steps[next].run(); next++; }
+        progress.style.width = (elapsed / DURATION * 100) + '%';
+        timeLabel.textContent = fmt(elapsed) + ' / ' + fmt(DURATION);
+      }
+      function frame(now) {
+        if (!playing) return;
+        tick((now - last) / 1000);
+        last = now;
+        if (elapsed >= DURATION) {
+          // Hold the final frame briefly, then loop
+          setPlaying(false);
+          setTimeout(function () { if (inView) { reset(); setPlaying(true); } }, 4000);
+          return;
+        }
+        raf = requestAnimationFrame(frame);
+      }
+      function setPlaying(p) {
+        playing = p;
+        iconPlay.classList.toggle('hidden', p);
+        iconPause.classList.toggle('hidden', !p);
+        toggle.setAttribute('aria-label', p ? 'Pause demo' : 'Play demo');
+        cancelAnimationFrame(raf);
+        if (p) { if (elapsed >= DURATION) reset(); last = performance.now(); raf = requestAnimationFrame(frame); }
+      }
+
+      toggle.addEventListener('click', function () { userPaused = playing; setPlaying(!playing); });
+      restart.addEventListener('click', function () { userPaused = false; reset(); setPlaying(true); });
+
+      reset();
+      var inView = false, userPaused = false;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) {
+        // Show the finished conversation without animation
+        tick(DURATION);
+        return;
+      }
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            inView = e.isIntersecting;
+            if (inView && !playing && !userPaused) setPlaying(true);
+            else if (!inView && playing) setPlaying(false);
+          });
+        }, { threshold: 0.35 }).observe(document.getElementById('demo-video'));
+      } else {
+        inView = true;
+        setPlaying(true);
+      }
+    })();
+
+    // Free demo request form (Netlify Forms)
+    (function () {
+      var f = document.getElementById('demo-form'); if (!f) return;
+      var s = document.getElementById('demo-form-status');
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var d = new FormData(f), body = new URLSearchParams(d).toString();
+        s.textContent = 'Sending...'; s.className = 'text-sm text-center text-[#64748b]';
+        fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+          .then(function (r) { if (!r.ok) throw new Error(r.status); f.reset(); s.textContent = "Thanks! We'll start building your demo and email you a link within 48 hours."; s.className = 'text-sm text-center text-green-700 font-medium'; })
+          .catch(function () {
+            var m = 'mailto:piyanshusingh2007@gmail.com?subject=' + encodeURIComponent('Free dental demo: ' + (d.get('practice') || '')) + '&body=' + encodeURIComponent('Practice: ' + (d.get('practice') || '') + '\nWebsite: ' + (d.get('website') || '') + '\nOpening hours: ' + (d.get('opening_hours') || '') + '\nNotes: ' + (d.get('notes') || '') + '\n\n' + (d.get('name') || '') + '\n' + (d.get('email') || ''));
+            s.innerHTML = 'We could not send that automatically. <a class="underline" href="' + m + '">Click here to email us instead</a>.'; s.className = 'text-sm text-center text-red-700';
+          });
+      });
+    })();
+  </script>
+  <!-- Botpress webchat -->
+  <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2026/10/27/23/20261027232329-FPGOSF5E.js" defer></script>
+  </body>
+</html>
+
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="2f1480c4-2363-4cef-b451-fafda7e6cf3c" data-app-host="app.netlify.com" data-account-tier="free"></script>
