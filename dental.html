@@ -335,6 +335,7 @@
     .inbox-item { padding: 10px; border-radius: 8px; background: #ffffff; border: 1px solid #e2e8f0; color: #0a0e27; animation: msgIn 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
   </style>
   <link rel="stylesheet" href="assets/css/theme-dark.css">
+  <link rel="stylesheet" href="assets/css/site-extras.css">
   <script src="assets/js/theme-fx.js" defer></script>
   <script src="assets/js/site-fx.js" defer></script>
 </head>
@@ -353,12 +354,19 @@
 
       <!-- Desktop Links -->
       <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-[#64748b]">
-        <a class='animated-link py-1 hover:text-[#0a0e27]' href='index.html'>Home</a>
-        <a class='animated-link py-1 hover:text-[#0a0e27] text-[#0a0e27] active font-semibold' href='dental.html'>🦷 Dental</a>
-        <a class='animated-link py-1 hover:text-[#0a0e27]' href='/services'>Services</a>
-        <a class='animated-link py-1 hover:text-[#0a0e27] ' href='/case-studies'>Case Studies</a>
-        <a class='animated-link py-1 hover:text-[#0a0e27] ' href='/about'>About</a>
-        <a class='animated-link py-1 hover:text-[#0a0e27] ' href='/contact'>Contact</a>
+        <a class="animated-link py-1 hover:text-[#0a0e27]" href="index.html">Home</a>
+        <div class="nav-dd"><a class="animated-link py-1 hover:text-[#0a0e27] text-[#0a0e27] active font-semibold" href="index.html#industries">Industries<i class="sb-chev"></i></a>
+          <div class="nav-menu">
+            <div class="nav-sub"><a class="nav-link" href="index.html#industries"><i class="sb-icon " style="--icon:url(/assets/icons/stethoscope.svg)"></i><span>Healthcare</span><i class="sb-chev r"></i></a>
+              <div class="nav-menu nav-menu-side"><a class="nav-link" href="dental.html"><i class="sb-icon " style="--icon:url(/assets/icons/heart-pulse.svg)"></i><span>Dental<small>AI receptionist demo</small></span></a></div></div>
+            <a class="nav-link" href="services.html"><i class="sb-icon " style="--icon:url(/assets/icons/landmark.svg)"></i><span>Real Estate</span></a>
+            <a class="nav-link" href="services.html"><i class="sb-icon " style="--icon:url(/assets/icons/building-2.svg)"></i><span>Enterprise</span></a>
+          </div></div>
+        <div class="nav-dd"><a class="animated-link py-1 hover:text-[#0a0e27]" href="services.html">Services<i class="sb-chev"></i></a>
+          <div class="nav-menu nav-menu-wide"><a class="nav-link" href="starbot.html"><i class="sb-icon " style="--icon:url(/assets/icons/bot.svg)"></i><span>StarBot<small>AI Chatbots</small></span></a><a class="nav-link" href="starlead.html"><i class="sb-icon " style="--icon:url(/assets/icons/target.svg)"></i><span>StarLead<small>Lead Generation</small></span></a><a class="nav-link" href="starbook.html"><i class="sb-icon " style="--icon:url(/assets/icons/calendar.svg)"></i><span>StarBook<small>Appointment Booking</small></span></a><a class="nav-link" href="starmail.html"><i class="sb-icon " style="--icon:url(/assets/icons/mail.svg)"></i><span>StarMail<small>Email Marketing</small></span></a><a class="nav-link" href="starflow.html"><i class="sb-icon " style="--icon:url(/assets/icons/workflow.svg)"></i><span>StarFlow<small>Workflow Automation</small></span></a><a class="nav-link" href="starads.html"><i class="sb-icon " style="--icon:url(/assets/icons/megaphone.svg)"></i><span>StarAds<small>AI-Managed Ads</small></span></a><a class="nav-link" href="dental.html#ai-receptionist"><i class="sb-icon " style="--icon:url(/assets/icons/phone.svg)"></i><span>AI Receptionist<small>Voice &amp; after-hours calls</small></span></a><a class="nav-link nav-all" href="services.html">All services<i class="sb-chev r"></i></a></div></div>
+        <a class="animated-link py-1 hover:text-[#0a0e27]" href="case-studies.html">Case Studies</a>
+        <a class="animated-link py-1 hover:text-[#0a0e27]" href="about.html">About</a>
+        <a class="animated-link py-1 hover:text-[#0a0e27]" href="contact.html">Contact</a>
       </nav>
 
       <!-- Right CTA -->
@@ -379,16 +387,10 @@
     <!-- Mobile Drawer -->
     <div id="mobile-drawer" class="hidden md:hidden bg-white border-b border-[#e2e8f0] px-6 py-6 shadow-xl space-y-4">
       <a class='block font-medium text-[#0a0e27] py-2 border-b border-slate-100' href='index.html'>Home</a>
-      <a class='block font-medium text-[#0a0e27] py-2 border-b border-slate-100' href='dental.html'>🦷 Dental</a>
-      <a class='block font-medium text-[#0a0e27] py-2 border-b border-slate-100' href='/services'>Services Overview</a>
-      <div class="pl-4 space-y-2 text-sm text-[#64748b]">
-        <a class='block py-1 hover:text-[#0a0e27]' href='/starbot'>★ StarBot (AI Chatbots)</a>
-        <a class='block py-1 hover:text-[#0a0e27]' href='/starlead'>★ StarLead (Cold Outbound)</a>
-        <a class='block py-1 hover:text-[#0a0e27]' href='/starbook'>★ StarBook (Appointment Booking)</a>
-        <a class='block py-1 hover:text-[#0a0e27]' href='/starmail'>★ StarMail (Email Marketing)</a>
-        <a class='block py-1 hover:text-[#0a0e27]' href='/starflow'>★ StarFlow (Workflow Automation)</a>
-        <a class='block py-1 hover:text-[#0a0e27]' href='/starads'>★ StarAds (AI-Assisted Ads)</a>
-      </div>
+      <a class='block font-medium text-[#0a0e27] py-2 border-b border-slate-100' href='index.html#industries'>Industries</a>
+      <div class="pl-4 space-y-2 text-sm text-[#64748b]"><a class='block py-1 hover:text-[#0a0e27]' href='index.html#industries'>Healthcare</a><a class='block py-1 pl-4 hover:text-[#0a0e27]' href='dental.html'>— Dental</a><a class='block py-1 hover:text-[#0a0e27]' href='services.html'>Real Estate</a><a class='block py-1 hover:text-[#0a0e27]' href='services.html'>Enterprise</a></div>
+      <a class='block font-medium text-[#0a0e27] py-2 border-b border-slate-100' href='services.html'>Services Overview</a>
+      <div class="pl-4 space-y-2 text-sm text-[#64748b]"><a class='block py-1 hover:text-[#0a0e27]' href='starbot.html'>StarBot (AI Chatbots)</a><a class='block py-1 hover:text-[#0a0e27]' href='starlead.html'>StarLead (Lead Generation)</a><a class='block py-1 hover:text-[#0a0e27]' href='starbook.html'>StarBook (Appointment Booking)</a><a class='block py-1 hover:text-[#0a0e27]' href='starmail.html'>StarMail (Email Marketing)</a><a class='block py-1 hover:text-[#0a0e27]' href='starflow.html'>StarFlow (Workflow Automation)</a><a class='block py-1 hover:text-[#0a0e27]' href='starads.html'>StarAds (AI-Managed Ads)</a><a class='block py-1 hover:text-[#0a0e27]' href='dental.html#ai-receptionist'>AI Receptionist</a></div>
       <a class='block font-medium text-[#0a0e27] py-2 border-b border-slate-100' href='/case-studies'>Case Studies</a>
       <a class='block font-medium text-[#0a0e27] py-2 border-b border-slate-100' href='/about'>About</a>
       <a class='block font-medium text-[#0a0e27] py-2 border-b border-slate-100' href='/contact'>Contact</a>
@@ -471,7 +473,7 @@
             <p class="mt-4 text-sm text-[#64748b]"><strong>Limited pilot availability.</strong> Call routing, integrations, and suitability are confirmed before deployment.</p>
             <div class="mt-8 rounded-3xl border border-[#e2e8f0] bg-white p-6">
               <div class="grid sm:grid-cols-2 gap-6">
-                <div class="space-y-4"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0">📞</span><span class="text-[15px] font-semibold text-[#0a0e27]">Incoming call</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0">🤖</span><span class="text-[15px] font-semibold text-[#0a0e27]">Starion AI Reception</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0">💬</span><span class="text-[15px] font-semibold text-[#0a0e27]">“I’d like to request an appointment.”</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0">✅</span><span class="text-[15px] font-semibold text-[#0a0e27]">Routine questions answered</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0">📅</span><span class="text-[15px] font-semibold text-[#0a0e27]">Appointment request captured</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0">🔔</span><span class="text-[15px] font-semibold text-[#0a0e27]">Reception notified</span></div></div>
+                <div class="space-y-4"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/phone.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Incoming call</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/bot.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Starion AI Reception</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/message-square.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">“I’d like to request an appointment.”</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/circle-check.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Routine questions answered</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/calendar.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Appointment request captured</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/bell.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Reception notified</span></div></div>
                 <div class="rounded-2xl border border-[#e2e8f0] bg-white p-5 self-start">
                   <p class="text-[11px] font-bold uppercase tracking-wider text-[#f59e0b] mb-3">Example appointment request</p>
                   <p class="text-[15px] leading-7 text-[#0a0e27]">Caller: Alex Taylor<br>Patient type: New patient<br>Preferred time: Tuesday afternoon</p>
@@ -601,7 +603,7 @@
           <div class="rounded-2xl border border-[#e2e8f0] bg-white p-8 flex flex-col">
             <p class="text-xs font-bold uppercase tracking-wider text-[#f59e0b]">Start with a pilot</p>
             <h3 class="mt-2 text-2xl font-bold">Test reception backup in your practice.</h3>
-            <p class="mt-4 text-4xl font-bold sb-grad inline-block self-start"><s class="dw-old">$199</s> $99.50 <span class="text-lg">one-off</span> <span class="dw-badge">🪔 50% OFF</span></p>
+            <p class="mt-4 text-4xl font-bold sb-grad inline-block self-start"><s class="dw-old">$199</s> $99.50 <span class="text-lg">one-off</span> <span class="dw-badge">50% OFF</span></p>
             <p class="mt-2 text-[15px] text-[#64748b]">14 days from agreed go-live<br>100 AI-handled call minutes included</p>
             <ul class="mt-5 space-y-2"><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>One practice</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>One agreed call-handling use case</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Practice-approved administrative FAQs</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Appointment-request capture</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Agreed notification and handover process</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>End-of-pilot review</li></ul>
             <p class="mt-5 text-sm text-[#64748b]">No automatic subscription. Additional usage requires your approval.</p>
@@ -610,7 +612,7 @@
           <div class="rounded-2xl border border-[#e2e8f0] bg-white p-8 flex flex-col">
             <p class="text-xs font-bold uppercase tracking-wider text-[#f59e0b]">Managed Reception Backup</p>
             <h3 class="mt-2 text-2xl font-bold">Ongoing support for your front desk.</h3>
-            <p class="mt-4 text-4xl font-bold sb-grad inline-block self-start"><s class="dw-old">$249</s> $124.50 <span class="text-lg">/month</span> <span class="dw-badge">🪔 50% OFF</span></p>
+            <p class="mt-4 text-4xl font-bold sb-grad inline-block self-start"><s class="dw-old">$249</s> $124.50 <span class="text-lg">/month</span> <span class="dw-badge">50% OFF</span></p>
             <p class="mt-2 text-[15px] text-[#64748b]">+ <s class="dw-old">$299</s> $149.50 one-off setup<br>300 AI-handled call minutes per billing month · Additional usage: $0.50/minute</p>
             <ul class="mt-5 space-y-2"><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>One practice</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Agreed overflow and/or after-hours routing</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Practice-approved administrative FAQs</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Appointment-request capture</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Agreed staff notification and handover</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Monitoring and error alerts</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Monthly performance summary</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Up to two approved FAQ-update batches per month</li></ul>
             <p class="mt-5 text-sm text-[#64748b]">Monthly rolling agreement. Direct booking and custom integrations quoted separately.</p>
@@ -1066,7 +1068,7 @@
 
       var steps = [
         { t: 0, run: function () { setCaption('Practice closed', 'A patient with toothache lands on your website late at night.'); } },
-        { t: 4, run: function () { msg('user', "Hi, do you take new patients? I've had a toothache for a few days 😣"); } },
+        { t: 4, run: function () { msg('user', "Hi, do you take new patients? I've had a toothache for a few days"); } },
         { t: 9, run: function () { msg('bot', "Hi! Yes, we're welcoming new patients. Sorry to hear about the toothache. Emergency appointments are $95 and we can usually see you the next day. Shall I find you a slot?"); setCaption('Answers after hours', 'StarBot replies in seconds with your real prices and availability.'); } },
         { t: 19, run: function () { msg('user', 'Yes please. Is tomorrow morning possible?'); } },
         { t: 24, run: function () { msg('bot', 'Tomorrow (Wednesday) I have 10:15 or 12:30. Which suits you best?'); setCaption('Checks your calendar', 'Only genuinely free slots are offered, pulled live from your diary.'); } },

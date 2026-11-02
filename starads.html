@@ -305,6 +305,7 @@
     }
   </style>
   <link rel="stylesheet" href="assets/css/theme-dark.css">
+  <link rel="stylesheet" href="assets/css/site-extras.css">
   <script src="assets/js/theme-fx.js" defer></script>
   <script src="assets/js/site-fx.js" defer></script>
 </head>
@@ -323,12 +324,19 @@
 
       <!-- Desktop Links -->
       <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-[#64748b]">
-        <a href="index.html" class="animated-link py-1 hover:text-[#0a0e27]">Home</a>
-        <a href="dental.html" class="animated-link py-1 hover:text-[#0a0e27]">🦷 Dental</a>
-        <a href="services.html" class="animated-link py-1 hover:text-[#0a0e27] text-[#0a0e27] active font-semibold">Services</a>
-        <a href="case-studies.html" class="animated-link py-1 hover:text-[#0a0e27] ">Case Studies</a>
-        <a href="about.html" class="animated-link py-1 hover:text-[#0a0e27] ">About</a>
-        <a href="contact.html" class="animated-link py-1 hover:text-[#0a0e27] ">Contact</a>
+        <a class="animated-link py-1 hover:text-[#0a0e27]" href="index.html">Home</a>
+        <div class="nav-dd"><a class="animated-link py-1 hover:text-[#0a0e27]" href="index.html#industries">Industries<i class="sb-chev"></i></a>
+          <div class="nav-menu">
+            <div class="nav-sub"><a class="nav-link" href="index.html#industries"><i class="sb-icon " style="--icon:url(/assets/icons/stethoscope.svg)"></i><span>Healthcare</span><i class="sb-chev r"></i></a>
+              <div class="nav-menu nav-menu-side"><a class="nav-link" href="dental.html"><i class="sb-icon " style="--icon:url(/assets/icons/heart-pulse.svg)"></i><span>Dental<small>AI receptionist demo</small></span></a></div></div>
+            <a class="nav-link" href="services.html"><i class="sb-icon " style="--icon:url(/assets/icons/landmark.svg)"></i><span>Real Estate</span></a>
+            <a class="nav-link" href="services.html"><i class="sb-icon " style="--icon:url(/assets/icons/building-2.svg)"></i><span>Enterprise</span></a>
+          </div></div>
+        <div class="nav-dd"><a class="animated-link py-1 hover:text-[#0a0e27] text-[#0a0e27] active font-semibold" href="services.html">Services<i class="sb-chev"></i></a>
+          <div class="nav-menu nav-menu-wide"><a class="nav-link" href="starbot.html"><i class="sb-icon " style="--icon:url(/assets/icons/bot.svg)"></i><span>StarBot<small>AI Chatbots</small></span></a><a class="nav-link" href="starlead.html"><i class="sb-icon " style="--icon:url(/assets/icons/target.svg)"></i><span>StarLead<small>Lead Generation</small></span></a><a class="nav-link" href="starbook.html"><i class="sb-icon " style="--icon:url(/assets/icons/calendar.svg)"></i><span>StarBook<small>Appointment Booking</small></span></a><a class="nav-link" href="starmail.html"><i class="sb-icon " style="--icon:url(/assets/icons/mail.svg)"></i><span>StarMail<small>Email Marketing</small></span></a><a class="nav-link" href="starflow.html"><i class="sb-icon " style="--icon:url(/assets/icons/workflow.svg)"></i><span>StarFlow<small>Workflow Automation</small></span></a><a class="nav-link" href="starads.html"><i class="sb-icon " style="--icon:url(/assets/icons/megaphone.svg)"></i><span>StarAds<small>AI-Managed Ads</small></span></a><a class="nav-link" href="dental.html#ai-receptionist"><i class="sb-icon " style="--icon:url(/assets/icons/phone.svg)"></i><span>AI Receptionist<small>Voice &amp; after-hours calls</small></span></a><a class="nav-link nav-all" href="services.html">All services<i class="sb-chev r"></i></a></div></div>
+        <a class="animated-link py-1 hover:text-[#0a0e27]" href="case-studies.html">Case Studies</a>
+        <a class="animated-link py-1 hover:text-[#0a0e27]" href="about.html">About</a>
+        <a class="animated-link py-1 hover:text-[#0a0e27]" href="contact.html">Contact</a>
       </nav>
 
       <!-- Right CTA -->
@@ -349,7 +357,7 @@
     <!-- Mobile Drawer -->
     <div id="mobile-drawer" class="hidden md:hidden bg-white border-b border-[#e2e8f0] px-6 py-6 shadow-xl space-y-4">
       <a href="index.html" class="block font-medium text-[#0a0e27] py-2 border-b border-slate-100">Home</a>
-      <a href="dental.html" class="block font-medium text-[#0a0e27] py-2 border-b border-slate-100">🦷 Dental</a>
+      <a href="dental.html" class="block font-medium text-[#0a0e27] py-2 border-b border-slate-100">Dental</a>
       <a href="services.html" class="block font-medium text-[#0a0e27] py-2 border-b border-slate-100">Services Overview</a>
       <div class="pl-4 space-y-2 text-sm text-[#64748b]">
         <a href="starbot.html" class="block py-1 hover:text-[#0a0e27]">★ StarBot (AI Chatbots)</a>
@@ -650,7 +658,7 @@
                 <p class="text-sm text-[#64748b] mt-1">Full system build, integration & maintenance</p>
               </div>
               <div class="text-right">
-                <span class="text-3xl sm:text-4xl font-bold text-[#0a0e27]"><s class="dw-old">$500/month</s> <span class="dw-new">$250/month</span> <span class="dw-badge">🪔 50% OFF</span></span>
+                <span class="text-3xl sm:text-4xl font-bold text-[#0a0e27]"><s class="dw-old">$500/month</s> <span class="dw-new">$250/month</span> <span class="dw-badge">50% OFF</span></span>
                 <span class="text-xl text-[#f59e0b] font-semibold"> + 10% of ad spend</span>
               </div>
             </div>
