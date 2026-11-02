@@ -336,6 +336,7 @@
   </style>
   <link rel="stylesheet" href="assets/css/theme-dark.css">
   <script src="assets/js/theme-fx.js" defer></script>
+  <script src="assets/js/site-fx.js" defer></script>
 </head>
 <body class="bg-white text-[#0a0e27] antialiased">
   <!-- Scroll Progress Indicator -->
@@ -400,7 +401,7 @@
     <!-- 1. HERO + LIVE DEMO CHAT -->
     <section class="py-16 sm:py-24 bg-white corporate-bg-pattern border-b border-[#e2e8f0]">
       <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-10 items-start">
           <div id="starbot-col">
             <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-4">StarBot for dental practices</span>
             <h1 class="text-4xl sm:text-5xl lg:text-[44px] font-bold tracking-tight text-[#0a0e27] leading-[1.1] mb-5">
@@ -456,6 +457,7 @@
             <p class="mt-3 text-xs text-[#64748b] text-center">Try it like a patient would. Brightside Dental is a sample practice, so no real appointments are booked.</p>
           </div>
           </div>
+          <div class="dental-divider" aria-hidden="true"><span>StarBot chat ✦ AI receptionist</span></div>
           <div id="ai-receptionist">
             <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-4">AI receptionist for dental practices</span>
             <h2 class="text-4xl sm:text-5xl lg:text-[44px] font-bold tracking-tight leading-[1.1] mb-5">A helping hand when reception <span class="sb-grad">can’t answer.</span></h2>
@@ -595,17 +597,17 @@
           <div class="rounded-2xl border border-[#e2e8f0] bg-white p-8 flex flex-col">
             <p class="text-xs font-bold uppercase tracking-wider text-[#f59e0b]">Start with a pilot</p>
             <h3 class="mt-2 text-2xl font-bold">Test reception backup in your practice.</h3>
-            <p class="mt-4 text-4xl font-bold sb-grad inline-block self-start">£199 <span class="text-lg">one-off</span></p>
+            <p class="mt-4 text-4xl font-bold sb-grad inline-block self-start"><s class="dw-old">$199</s> $99.50 <span class="text-lg">one-off</span> <span class="dw-badge">🪔 50% OFF</span></p>
             <p class="mt-2 text-[15px] text-[#64748b]">14 days from agreed go-live<br>100 AI-handled call minutes included</p>
             <ul class="mt-5 space-y-2"><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>One practice</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>One agreed call-handling use case</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Practice-approved administrative FAQs</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Appointment-request capture</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Agreed notification and handover process</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>End-of-pilot review</li></ul>
             <p class="mt-5 text-sm text-[#64748b]">No automatic subscription. Additional usage requires your approval.</p>
-            <p class="mt-3 text-sm text-[#64748b]">Move to the managed plan within 14 days of completing your pilot and we’ll credit £199 against the setup fee.</p>
+            <p class="mt-3 text-sm text-[#64748b]">Move to the managed plan within 14 days of completing your pilot and we’ll credit $99.50 against the setup fee.</p>
             <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-outline mt-auto pt-0 px-6 py-3 rounded-xl self-start mt-6">Discuss a Pilot</a></div>
           <div class="rounded-2xl border border-[#e2e8f0] bg-white p-8 flex flex-col">
             <p class="text-xs font-bold uppercase tracking-wider text-[#f59e0b]">Managed Reception Backup</p>
             <h3 class="mt-2 text-2xl font-bold">Ongoing support for your front desk.</h3>
-            <p class="mt-4 text-4xl font-bold sb-grad inline-block self-start">£249 <span class="text-lg">/month</span></p>
-            <p class="mt-2 text-[15px] text-[#64748b]">+ £299 one-off setup<br>300 AI-handled call minutes per billing month · Additional usage: £0.50/minute</p>
+            <p class="mt-4 text-4xl font-bold sb-grad inline-block self-start"><s class="dw-old">$249</s> $124.50 <span class="text-lg">/month</span> <span class="dw-badge">🪔 50% OFF</span></p>
+            <p class="mt-2 text-[15px] text-[#64748b]">+ <s class="dw-old">$299</s> $149.50 one-off setup<br>300 AI-handled call minutes per billing month · Additional usage: $0.50/minute</p>
             <ul class="mt-5 space-y-2"><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>One practice</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Agreed overflow and/or after-hours routing</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Practice-approved administrative FAQs</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Appointment-request capture</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Agreed staff notification and handover</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Monitoring and error alerts</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Monthly performance summary</li><li class="flex gap-2 text-[15px]"><span class="text-[#f59e0b]">✓</span>Up to two approved FAQ-update batches per month</li></ul>
             <p class="mt-5 text-sm text-[#64748b]">Monthly rolling agreement. Direct booking and custom integrations quoted separately.</p>
             <a href="https://calendly.com/piyanshusingh2007/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold mt-6 px-6 py-3 rounded-xl self-start">Book a Setup Review</a></div>
@@ -773,7 +775,7 @@
           <ul class="space-y-2.5 text-[14px] text-[#64748b]">
             <li>
               <span class="block text-xs text-[#0a0e27] font-semibold">Email:</span>
-              <a href="mailto:piyanshusingh2007@gmail.com" class="hover:text-[#0a0e27] underline transition-colors">piyanshusingh2007@gmail.com</a>
+              <a href="mailto:starion@gmail.com" class="hover:text-[#0a0e27] underline transition-colors">starion@gmail.com</a> / <a href="mailto:mail.starion.ai@gmail.com" class="hover:text-[#0a0e27] underline transition-colors">mail.starion.ai@gmail.com</a>
             </li>
             <li>
               <span class="block text-xs text-[#0a0e27] font-semibold">Phone / WhatsApp:</span>
@@ -1061,7 +1063,7 @@
       var steps = [
         { t: 0, run: function () { setCaption('Practice closed', 'A patient with toothache lands on your website late at night.'); } },
         { t: 4, run: function () { msg('user', "Hi, do you take new patients? I've had a toothache for a few days 😣"); } },
-        { t: 9, run: function () { msg('bot', "Hi! Yes, we're welcoming new patients. Sorry to hear about the toothache. Emergency appointments are £95 and we can usually see you the next day. Shall I find you a slot?"); setCaption('Answers after hours', 'StarBot replies in seconds with your real prices and availability.'); } },
+        { t: 9, run: function () { msg('bot', "Hi! Yes, we're welcoming new patients. Sorry to hear about the toothache. Emergency appointments are $95 and we can usually see you the next day. Shall I find you a slot?"); setCaption('Answers after hours', 'StarBot replies in seconds with your real prices and availability.'); } },
         { t: 19, run: function () { msg('user', 'Yes please. Is tomorrow morning possible?'); } },
         { t: 24, run: function () { msg('bot', 'Tomorrow (Wednesday) I have 10:15 or 12:30. Which suits you best?'); setCaption('Checks your calendar', 'Only genuinely free slots are offered, pulled live from your diary.'); } },
         { t: 31, run: function () { msg('user', '10:15 please'); } },
@@ -1160,10 +1162,13 @@
         new IntersectionObserver(function (entries) {
           entries.forEach(function (e) {
             inView = e.isIntersecting;
-            if (inView && !playing && !userPaused) setPlaying(true);
-            else if (!inView && playing) setPlaying(false);
+            if (inView) {
+              userPaused = false;               // every new visit starts the video again
+              if (elapsed >= DURATION) reset(); // replay from the start if it had finished
+              if (!playing) setPlaying(true);
+            } else if (playing) { setPlaying(false); }
           });
-        }, { threshold: 0.35 }).observe(document.getElementById('demo-video'));
+        }, { threshold: 0.15 }).observe(document.querySelector('#demo-video .reel') || document.getElementById('demo-video'));
       } else {
         inView = true;
         setPlaying(true);
@@ -1181,7 +1186,7 @@
         fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
           .then(function (r) { if (!r.ok) throw new Error(r.status); f.reset(); s.textContent = "Thanks! We'll start building your demo and email you a link within 48 hours."; s.className = 'text-sm text-center text-green-700 font-medium'; })
           .catch(function () {
-            var m = 'mailto:piyanshusingh2007@gmail.com?subject=' + encodeURIComponent('Free dental demo: ' + (d.get('practice') || '')) + '&body=' + encodeURIComponent('Practice: ' + (d.get('practice') || '') + '\nWebsite: ' + (d.get('website') || '') + '\nOpening hours: ' + (d.get('opening_hours') || '') + '\nNotes: ' + (d.get('notes') || '') + '\n\n' + (d.get('name') || '') + '\n' + (d.get('email') || ''));
+            var m = 'mailto:starion@gmail.com,mail.starion.ai@gmail.com?subject=' + encodeURIComponent('Free dental demo: ' + (d.get('practice') || '')) + '&body=' + encodeURIComponent('Practice: ' + (d.get('practice') || '') + '\nWebsite: ' + (d.get('website') || '') + '\nOpening hours: ' + (d.get('opening_hours') || '') + '\nNotes: ' + (d.get('notes') || '') + '\n\n' + (d.get('name') || '') + '\n' + (d.get('email') || ''));
             s.innerHTML = 'We could not send that automatically. <a class="underline" href="' + m + '">Click here to email us instead</a>.'; s.className = 'text-sm text-center text-red-700';
           });
       });
