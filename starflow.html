@@ -306,6 +306,8 @@
   </style>
   <link rel="stylesheet" href="assets/css/theme-dark.css">
   <link rel="stylesheet" href="assets/css/site-extras.css">
+  <link rel="stylesheet" href="assets/css/conversion.css">
+  <script src="assets/js/roi.js" defer></script>
   <script src="assets/js/theme-fx.js" defer></script>
   <script src="assets/js/site-fx.js" defer></script>
 </head>
@@ -333,7 +335,7 @@
             <a class="nav-link" href="services.html"><i class="sb-icon " style="--icon:url(/assets/icons/building-2.svg)"></i><span>Enterprise</span></a>
           </div></div>
         <div class="nav-dd"><a class="animated-link py-1 hover:text-[#0a0e27] text-[#0a0e27] active font-semibold" href="services.html">Services<i class="sb-chev"></i></a>
-          <div class="nav-menu nav-menu-wide"><a class="nav-link" href="starbot.html"><i class="sb-icon " style="--icon:url(/assets/icons/bot.svg)"></i><span>StarBot<small>AI Chatbots</small></span></a><a class="nav-link" href="starlead.html"><i class="sb-icon " style="--icon:url(/assets/icons/target.svg)"></i><span>StarLead<small>Lead Generation</small></span></a><a class="nav-link" href="starbook.html"><i class="sb-icon " style="--icon:url(/assets/icons/calendar.svg)"></i><span>StarBook<small>Appointment Booking</small></span></a><a class="nav-link" href="starmail.html"><i class="sb-icon " style="--icon:url(/assets/icons/mail.svg)"></i><span>StarMail<small>Email Marketing</small></span></a><a class="nav-link" href="starflow.html"><i class="sb-icon " style="--icon:url(/assets/icons/workflow.svg)"></i><span>StarFlow<small>Workflow Automation</small></span></a><a class="nav-link" href="starads.html"><i class="sb-icon " style="--icon:url(/assets/icons/megaphone.svg)"></i><span>StarAds<small>AI-Managed Ads</small></span></a><a class="nav-link" href="dental.html#ai-receptionist"><i class="sb-icon " style="--icon:url(/assets/icons/phone.svg)"></i><span>AI Receptionist<small>Voice &amp; after-hours calls</small></span></a><a class="nav-link nav-all" href="services.html">All services<i class="sb-chev r"></i></a></div></div>
+          <div class="nav-menu nav-menu-wide"><a class="nav-link" href="starbot.html"><i class="sb-icon " style="--icon:url(/assets/icons/bot.svg)"></i><span>StarBot<small>AI Chatbots</small></span></a><a class="nav-link" href="starlead.html"><i class="sb-icon " style="--icon:url(/assets/icons/target.svg)"></i><span>StarLead<small>Lead Generation</small></span></a><a class="nav-link" href="starbook.html"><i class="sb-icon " style="--icon:url(/assets/icons/calendar.svg)"></i><span>StarBook<small>Appointment Booking</small></span></a><a class="nav-link" href="starmail.html"><i class="sb-icon " style="--icon:url(/assets/icons/mail.svg)"></i><span>StarMail<small>Email Marketing</small></span></a><a class="nav-link" href="starflow.html"><i class="sb-icon " style="--icon:url(/assets/icons/workflow.svg)"></i><span>StarFlow<small>Workflow Automation</small></span></a><a class="nav-link" href="starads.html"><i class="sb-icon " style="--icon:url(/assets/icons/megaphone.svg)"></i><span>StarAds<small>AI-Managed Ads</small></span></a><a class="nav-link" href="dental.html#ai-receptionist"><i class="sb-icon " style="--icon:url(/assets/icons/phone.svg)"></i><span>AI Receptionist<small>Voice &amp; after-hours calls</small></span></a><a class="nav-link" href="pay-for-performance.html"><i class="sb-icon" style="--icon:url(/assets/icons/wallet.svg)"></i><span>Pay-for-Performance<small>Pay for results</small></span></a><a class="nav-link nav-all" href="services.html">All services<i class="sb-chev r"></i></a></div></div>
         <a class="animated-link py-1 hover:text-[#0a0e27]" href="case-studies.html">Case Studies</a>
         <a class="animated-link py-1 hover:text-[#0a0e27]" href="about.html">About</a>
         <a class="animated-link py-1 hover:text-[#0a0e27]" href="contact.html">Contact</a>
@@ -440,6 +442,7 @@
         </div>
       </div>
     </section>
+<section id="roi" class="py-16"><div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8"><div class="roi-calc" data-service="starflow"></div></div></section>
 
     <!-- 4. HOW IT WORKS (Vertical Step Diagram in HTML/CSS) -->
     <section class="py-24 sm:py-28 bg-[#f8fafc] border-b border-[#e2e8f0]">
@@ -649,8 +652,8 @@
                 <p class="text-sm text-[#64748b] mt-1">Full system build, integration & maintenance</p>
               </div>
               <div class="text-right">
-                <span class="text-3xl sm:text-4xl font-bold text-[#0a0e27]"><s class="dw-old">$1,500 setup</s> <span class="dw-new">$750 setup</span></span>
-                <span class="text-xl text-[#f59e0b] font-semibold"> + <s class="dw-old">$300/month</s> <span class="dw-new">$150/month</span> <span class="dw-badge">50% OFF</span></span>
+                <span class="text-3xl sm:text-4xl font-bold text-[#0a0e27]">$1,500 setup</span>
+                <span class="text-xl text-[#f59e0b] font-semibold"> + $300/month <span class="pfp-link" role="button" tabindex="0" data-pfp="starflow">Or Pay-for-Performance</span></span>
               </div>
             </div>
             <p class="mt-6 text-[15px] text-[#64748b] leading-relaxed">
@@ -665,20 +668,17 @@
         </div>
       </div>
     </section>
+<section class="py-10"><div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8"><div class="guarantee-box"><h3>Our Guarantee: We only win when you win.</h3><p><b>The Starion Promise:</b> we guarantee your first automated workflow live and running within 14 days. If we don’t hit this in 14 days, we refund your setup fee. You risk nothing on our fee.</p><small>Applies when you give us the access and information we need on time. Ad spend and third-party charges are paid directly to those companies. See the pilot guarantee in our <a href="terms.html" class="underline">Terms</a>.</small></div></div></section>
 
     <!-- 8. CASE STUDY (Placeholder) -->
     <section class="py-20 sm:py-24 bg-[#f8fafc] border-b border-[#e2e8f0]">
       <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto reveal">
-          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">PROVEN MODEL</span>
-          <h2 class="text-2xl sm:text-3xl font-semibold text-[#0a0e27] tracking-tight mb-6">
-            Case Study
-          </h2>
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">PROJECTED OUTCOMES &amp; PILOT DEMOS</span>
+          <h2 class="text-2xl sm:text-3xl font-semibold text-[#0a0e27] tracking-tight mb-6">Projected Outcome (Simulated)</h2>
           <div class="p-8 rounded-2xl bg-white border border-[#e2e8f0] shadow-sm">
-            <h3 class="text-lg font-bold text-[#0a0e27] mb-2">Marketing agency — 20 hours/week saved</h3>
-            <p class="text-[16px] text-[#64748b] leading-relaxed">
-              &ldquo;An agency was manually copying leads from forms to their CRM.&rdquo;
-            </p>
+            <h3 class="text-lg font-bold text-[#0a0e27] mb-2">Projected: marketing agency, around 20 hours a week saved</h3>
+            <p class="text-[16px] text-[#64748b] leading-relaxed">&ldquo;An agency copying leads from forms into its CRM by hand could save around 20 hours a week once that workflow is automated.&rdquo;</p><p class="sim-label">Simulated projection based on industry averages. <a href="contact.html" class="underline">Be our next real case study.</a></p>
           </div>
         </div>
       </div>

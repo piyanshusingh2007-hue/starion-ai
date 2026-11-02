@@ -1,0 +1,59 @@
+/* Starion AI - guarantees, ROI calculators, Pay-for-Performance pop-up and banners */
+.pfp-link{display:inline-block;margin-left:.6rem;padding:.15rem .7rem;border-radius:999px;border:1px solid rgba(0,161,255,.5);background:rgba(0,161,255,.10);font-size:.78rem;font-weight:600;line-height:1.6;white-space:nowrap;cursor:pointer;-webkit-text-fill-color:#7dc0ff;color:#7dc0ff!important;vertical-align:middle;transition:background .25s,box-shadow .25s}
+.pfp-link:hover{background:rgba(0,161,255,.22);box-shadow:0 0 16px rgba(0,161,255,.35)}
+.roi-line{margin-top:.6rem;font-size:.8rem;font-weight:600;color:#7dc0ff}
+.roi-line small{font-weight:400;color:#8f8f9e}
+
+/* ROI calculator */
+.roi-wrap{border-radius:22px;padding:2rem;background:rgba(20,20,40,.6);border:1px solid rgba(100,150,255,.2);backdrop-filter:blur(20px);box-shadow:0 0 40px rgba(100,150,255,.08)}
+.roi-eyebrow{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7dc0ff;margin-bottom:.6rem}
+.roi-wrap h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#f8f8f8}
+.roi-sub{margin-top:.5rem;color:#a1a1b0}
+.roi-grid{display:grid;gap:1.5rem;margin-top:1.5rem}
+@media(min-width:900px){.roi-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}}
+.roi-inputs{display:grid;gap:.9rem;align-content:start}
+.roi-input span{display:block;font-size:.85rem;color:#a1a1b0;margin-bottom:.3rem}
+.roi-input input{width:100%;padding:.7rem .9rem;border-radius:12px;font-size:1rem}
+.roi-formula{padding:1rem 1.2rem;border-radius:14px;background:rgba(0,161,255,.10);border:1px solid rgba(0,161,255,.3);font-weight:600;color:#f8f8f8;line-height:1.5}
+.roi-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.8rem;margin-top:.9rem}
+.roi-card{padding:1rem;border-radius:14px;background:rgba(1,1,5,.5);border:1px solid rgba(100,150,255,.18)}
+.roi-card b{display:block;font-size:1.5rem;font-weight:800;color:#f8f8f8}
+.roi-card span{display:block;margin-top:.2rem;font-size:.78rem;color:#8f8f9e;line-height:1.35}
+.roi-loss b{color:#ff8a8a}.roi-gain b{color:#6ee7b7}
+.roi-roi{background:linear-gradient(135deg,rgba(0,161,255,.22),rgba(164,107,245,.22));border-color:rgba(100,150,255,.5)}
+.roi-note{margin-top:1.2rem;font-size:.78rem;color:#8f8f9e}
+
+/* guarantee + simulated labels */
+.guarantee-box{margin-top:1.5rem;padding:1.6rem 1.8rem;border-radius:20px;background:linear-gradient(135deg,rgba(0,161,255,.16),rgba(164,107,245,.16));border:2px solid rgba(100,150,255,.55);box-shadow:0 0 30px rgba(100,150,255,.2)}
+.guarantee-box h3{font-size:1.35rem;font-weight:800;color:#f8f8f8;margin:0 0 .5rem}
+.guarantee-box p{color:#d4d4e0;line-height:1.6}
+.guarantee-box p+p{margin-top:.6rem}
+.guarantee-box small{display:block;margin-top:.7rem;font-size:.78rem;color:#8f8f9e}
+.sim-label{display:inline-block;margin-top:1rem;padding:.4rem .9rem;border-radius:999px;font-size:.78rem;font-weight:600;color:#fcd34d;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.4)}
+.pfp-banner{border-radius:22px;padding:2rem;text-align:center;background:linear-gradient(135deg,rgba(0,161,255,.2),rgba(164,107,245,.2));border:1px solid rgba(100,150,255,.45);box-shadow:0 0 40px rgba(100,150,255,.18)}
+.pfp-banner h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800}
+.pfp-banner p{margin-top:.5rem;color:#a1a1b0}
+.stat-banner{border-radius:18px;padding:1.2rem 1.6rem;text-align:center;background:rgba(20,20,40,.6);border:1px solid rgba(100,150,255,.2);color:#d4d4e0}
+.stat-banner b{color:#7dc0ff}
+
+/* modal */
+.pfp-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(1,1,5,.75);backdrop-filter:blur(6px)}
+.pfp-box{position:relative;max-width:640px;width:100%;max-height:90vh;overflow:auto;padding:2rem;border-radius:22px;background:#0b0d1f;border:1px solid rgba(100,150,255,.35);box-shadow:0 0 60px rgba(100,150,255,.25)}
+.pfp-box h2{font-size:1.7rem;font-weight:800;color:#f8f8f8;line-height:1.2}
+.pfp-box p{margin-top:.8rem;color:#a1a1b0;line-height:1.6}
+.pfp-x{position:absolute;top:.8rem;right:1rem;font-size:1.8rem;line-height:1;color:#a1a1b0;background:none;border:0;cursor:pointer}
+.pfp-plans{display:grid;gap:.8rem;margin-top:1.2rem}
+@media(min-width:560px){.pfp-plans{grid-template-columns:1fr 1fr}}
+.pfp-plans>div{padding:1rem;border-radius:14px;background:rgba(20,20,40,.7);border:1px solid rgba(100,150,255,.18)}
+.pfp-plans small{display:block;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#8f8f9e}
+.pfp-plans b{display:block;margin-top:.4rem;color:#f8f8f8;font-size:1rem;line-height:1.4}
+.pfp-plans span{display:block;margin-top:.4rem;font-size:.82rem;color:#8f8f9e}
+.pfp-hot{border-color:rgba(0,161,255,.6)!important;box-shadow:0 0 22px rgba(0,161,255,.2)}
+.pfp-guar{padding:.9rem 1rem;border-radius:14px;background:rgba(0,161,255,.10)}
+.pfp-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.2rem}
+
+/* PFP page table */
+.pfp-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.pfp-table th,.pfp-table td{padding:.9rem 1rem;text-align:left;border-bottom:1px solid rgba(100,150,255,.18);vertical-align:top}
+.pfp-table th{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#7dc0ff}
+.pfp-table td:first-child{font-weight:700;color:#f8f8f8}
