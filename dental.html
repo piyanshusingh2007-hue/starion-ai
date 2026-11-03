@@ -406,15 +406,35 @@
 
 
   <main>
-    <!-- 1. HERO + LIVE DEMO CHAT -->
-    <section class="py-16 sm:py-24 bg-white corporate-bg-pattern border-b border-[#e2e8f0]">
-      <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-10 items-start">
-          <div id="starbot-col">
-            <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-4">StarBot for dental practices</span>
-            <h1 class="text-4xl sm:text-5xl lg:text-[44px] font-bold tracking-tight text-[#0a0e27] leading-[1.1] mb-5">
-              Never miss another new-patient enquiry.
-            </h1>
+    <!-- 1. SPLIT SCREEN: LEFT = AI Receptionist (voice) | RIGHT = AI Chatbot (text) -->
+    <section class="split-screen" aria-label="AI Receptionist and AI Chatbot for dental practices">
+      <div class="split-half split-left" id="ai-receptionist"><div class="split-inner">
+            <span class="split-badge">AI Receptionist · Voice AI</span>
+            <h1 class="text-4xl sm:text-5xl lg:text-[44px] font-bold tracking-tight leading-[1.1] mb-5">Stop Losing <span class="sb-grad">After-Hours Calls.</span></h1>
+            <p class="text-[18px] text-[#64748b] leading-[1.7] mb-4">Give callers a clear next step—even when your team is busy or the practice is closed. Starion’s automated phone assistant answers routine questions using your approved practice information and captures appointment requests for your reception team to confirm.</p>
+            <p class="text-[17px] font-semibold text-[#0a0e27] mb-6">Built to support your team—not replace it.</p>
+<div class="math-box"><h3>The math</h3>
+<p>5 missed calls/week × $1,500 (Patient LTV) = <span class="lost">$7,500 lost/week</span>. That is <span class="lost">$390,000 lost/year.</span></p>
+<p>Starion costs $2,400/year. Capturing just 2 patients/month generates <span class="win">$36,000</span> in value. <span class="win">ROI = 1,400%.</span></p></div>
+<div class="guarantee-box compact"><p>Guaranteed to capture 5 requests in your 14-day pilot or full refund.</p><small>Applies to practices with at least 5 missed or after-hours calls in that time. Full terms below.</small></div>
+
+            <div class="grid gap-4"><div class="rounded-2xl border border-[#e2e8f0] bg-white p-5"><p class="font-bold text-[#0a0e27]">Overflow &amp; after-hours support</p><p class="mt-1 text-[15px] text-[#64748b] leading-6">Handle routine enquiries when reception is unavailable.</p></div><div class="rounded-2xl border border-[#e2e8f0] bg-white p-5"><p class="font-bold text-[#0a0e27]">Appointment requests, captured</p><p class="mt-1 text-[15px] text-[#64748b] leading-6">Collect the caller’s details and preferred time for staff follow-up.</p></div><div class="rounded-2xl border border-[#e2e8f0] bg-white p-5"><p class="font-bold text-[#0a0e27]">Your team stays in control</p><p class="mt-1 text-[15px] text-[#64748b] leading-6">Use approved information, agreed handover rules, and staff confirmation.</p></div></div>
+            <p class="mt-4 text-sm text-[#64748b]"><strong>Limited pilot availability.</strong> Call routing, integrations, and suitability are confirmed before deployment.</p>
+            <div class="mt-8 rounded-3xl border border-[#e2e8f0] bg-white p-6">
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div class="space-y-4"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/phone.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Incoming call</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/bot.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Starion AI Reception</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/message-square.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">“I’d like to request an appointment.”</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/circle-check.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Routine questions answered</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/calendar.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Appointment request captured</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/bell.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Reception notified</span></div></div>
+                <div class="rounded-2xl border border-[#e2e8f0] bg-white p-5 self-start">
+                  <p class="text-[11px] font-bold uppercase tracking-wider text-[#f59e0b] mb-3">Example appointment request</p>
+                  <p class="text-[15px] leading-7 text-[#0a0e27]">Caller: Alex Taylor<br>Patient type: New patient<br>Preferred time: Tuesday afternoon</p>
+                  <p class="mt-3 text-[13px] font-semibold text-[#f59e0b]">Status: Awaiting reception confirmation</p>
+                </div>
+              </div>
+              <p class="mt-5 text-xs text-[#64748b]">Illustrative demo — fictional caller information.</p>
+            </div>
+            <p class="mt-4 text-[15px] text-[#64748b]">A clear handover—not another disconnected message. Your team receives the request and confirms the next step.</p></div></div>
+      <div class="split-half split-right" id="starbot-col"><div class="split-inner">
+            <span class="split-badge">AI Chatbot · Text AI</span>
+            <h2 class="text-4xl sm:text-5xl lg:text-[44px] font-bold tracking-tight text-[#0a0e27] leading-[1.1] mb-5">Turn Website Visitors into <span class="sb-grad">Booked Patients.</span></h2>
             <p class="text-[18px] sm:text-[20px] text-[#64748b] leading-[1.7] mb-8">
               StarBot answers patient questions 24/7, captures enquiries, and books appointments directly into your calendar.
             </p>
@@ -432,6 +452,11 @@
                 Reduces missed enquiries
               </li>
             </ul>
+<div class="math-box"><h3>The math</h3>
+<p>100 visitors/week at 2% conversion = 2 leads. At 5% conversion = 5 leads. Missing 3 leads/week × $1,500 = <span class="lost">$4,500/week</span>. That is <span class="lost">$234,000 lost/year.</span></p>
+<p>Capturing 3 extra patients/month generates <span class="win">$54,000</span>. <span class="win">ROI = 2,150%.</span></p></div>
+<div class="guarantee-box compact"><p>Guaranteed to handle the agreed number of conversations and book the agreed number of appointments in 14 days or we refund your setup fee.</p><small>Targets are written into your quote before we start.</small></div>
+
             <div class="flex flex-col sm:flex-row sm:items-center gap-4">
               <a href="#free-demo" class="btn-gold text-[16px] px-8 py-4 rounded-xl shadow-sm">Get a free website demo</a>
               <span class="text-sm text-[#64748b]">Built with your services &amp; opening hours. No call needed.</span>
@@ -463,46 +488,15 @@
               </form>
             </div>
             <p class="mt-3 text-xs text-[#64748b] text-center">Try it like a patient would. Brightside Dental is a sample practice, so no real appointments are booked.</p>
-          </div>
-          </div>
-          <div class="dental-divider" aria-hidden="true"><span>StarBot chat ✦ AI receptionist</span></div>
-          <div id="ai-receptionist">
-            <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-4">AI receptionist for dental practices</span>
-            <h2 class="text-4xl sm:text-5xl lg:text-[44px] font-bold tracking-tight leading-[1.1] mb-5">A helping hand when reception <span class="sb-grad">can’t answer.</span></h2>
-            <p class="text-[18px] text-[#64748b] leading-[1.7] mb-4">Give callers a clear next step—even when your team is busy or the practice is closed. Starion’s automated phone assistant answers routine questions using your approved practice information and captures appointment requests for your reception team to confirm.</p>
-            <p class="text-[17px] font-semibold text-[#0a0e27] mb-6">Built to support your team—not replace it.</p>
-            <div class="grid gap-4"><div class="rounded-2xl border border-[#e2e8f0] bg-white p-5"><p class="font-bold text-[#0a0e27]">Overflow &amp; after-hours support</p><p class="mt-1 text-[15px] text-[#64748b] leading-6">Handle routine enquiries when reception is unavailable.</p></div><div class="rounded-2xl border border-[#e2e8f0] bg-white p-5"><p class="font-bold text-[#0a0e27]">Appointment requests, captured</p><p class="mt-1 text-[15px] text-[#64748b] leading-6">Collect the caller’s details and preferred time for staff follow-up.</p></div><div class="rounded-2xl border border-[#e2e8f0] bg-white p-5"><p class="font-bold text-[#0a0e27]">Your team stays in control</p><p class="mt-1 text-[15px] text-[#64748b] leading-6">Use approved information, agreed handover rules, and staff confirmation.</p></div></div>
-            <p class="mt-4 text-sm text-[#64748b]"><strong>Limited pilot availability.</strong> Call routing, integrations, and suitability are confirmed before deployment.</p>
-            <div class="mt-8 rounded-3xl border border-[#e2e8f0] bg-white p-6">
-              <div class="grid sm:grid-cols-2 gap-6">
-                <div class="space-y-4"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/phone.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Incoming call</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/bot.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Starion AI Reception</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/message-square.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">“I’d like to request an appointment.”</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/circle-check.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Routine questions answered</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/calendar.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Appointment request captured</span></div><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-full border border-[#e2e8f0] flex items-center justify-center flex-shrink-0"><i class="sb-icon " style="--icon:url(/assets/icons/bell.svg)"></i></span><span class="text-[15px] font-semibold text-[#0a0e27]">Reception notified</span></div></div>
-                <div class="rounded-2xl border border-[#e2e8f0] bg-white p-5 self-start">
-                  <p class="text-[11px] font-bold uppercase tracking-wider text-[#f59e0b] mb-3">Example appointment request</p>
-                  <p class="text-[15px] leading-7 text-[#0a0e27]">Caller: Alex Taylor<br>Patient type: New patient<br>Preferred time: Tuesday afternoon</p>
-                  <p class="mt-3 text-[13px] font-semibold text-[#f59e0b]">Status: Awaiting reception confirmation</p>
-                </div>
-              </div>
-              <p class="mt-5 text-xs text-[#64748b]">Illustrative demo — fictional caller information.</p>
-            </div>
-            <p class="mt-4 text-[15px] text-[#64748b]">A clear handover—not another disconnected message. Your team receives the request and confirms the next step.</p>
-          </div>
-        </div>
-      </div>
+          </div></div></div>
     </section>
+
+    <!-- BIG DIVIDER -->
+    <div class="mega-divider"><h2>WANT TO SEE IT IN ACTION?</h2></div>
 
     <!-- 2. DEMO REEL (75 seconds) -->
     <section id="demo-video" class="py-24 sm:py-28 bg-[#f8fafc] border-b border-[#e2e8f0]">
       <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mb-12 reveal">
-          <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">75-second demo</span>
-          <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight">
-            11:47 pm. The practice is closed. A new patient books anyway.
-          </h2>
-          <p class="mt-3 text-[17px] text-[#64748b]">
-            Watch a simulated after-hours enquiry go from first question to a confirmed appointment in your diary, with no one on reception.
-          </p>
-        </div>
-
         <div class="reel reveal rounded-2xl border border-[#e2e8f0] bg-white shadow-sm overflow-hidden">
           <div class="grid grid-cols-1 lg:grid-cols-12">
             <!-- Phone -->
@@ -560,16 +554,18 @@
             </div>
           </div>
         </div>
+      <p class="mt-4 text-center text-sm text-[#64748b]">75-second demo · 11:47 pm. The practice is closed. A new patient books anyway. A simulated after-hours enquiry goes from first question to a confirmed appointment, with no one on reception.</p>
       </div>
     </section>
 
     <!-- 3. CASE STUDY -->
+    <div class="mega-divider"><h2>REAL CASE STUDY OUTCOME</h2></div>
     <section class="py-24 sm:py-28 bg-white border-b border-[#e2e8f0]">
       <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div class="lg:col-span-5 reveal">
             <span class="inline-block text-xs font-bold uppercase tracking-wider text-[#f59e0b] mb-3">Projected outcome &middot; simulated</span>
-            <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight mb-6">Projected: about 23 extra appointments in 30 days</h2><p class="sim-label">Simulated projection based on industry averages. <a href="contact.html" class="underline">Be our next real case study.</a></p>
+            <h2 class="text-3xl sm:text-4xl font-semibold text-[#0a0e27] tracking-tight mb-6">Projected Outcome: 23 Extra Appointments in 30 Days.</h2><p class="case-sub">Simulated projection based on industry averages. <a href="contact.html">Be our next real case study.</a></p>
             <div class="rounded-2xl bg-[#0a0e27] text-white p-8">
               <p class="text-[56px] font-bold leading-none text-[#f59e0b]"><span data-countup="23">23</span></p>
               <p class="mt-2 text-[15px] text-slate-300">extra appointments projected in the first 30 days, with no extra reception hours.</p>
@@ -577,15 +573,15 @@
           </div>
           <div class="lg:col-span-7 space-y-5 reveal stagger-2">
             <div class="star-card !p-7">
-              <h3 class="text-[17px] font-bold text-[#0a0e27] mb-2">The problem</h3>
+              <h3 class="text-[17px] font-bold text-[#0a0e27] mb-2">The Problem:</h3>
               <p class="text-[16px] text-[#64748b] leading-relaxed">A busy clinic may be missing after-hours enquiries. Patients who find the website in the evening hit a voicemail or a contact form, and many book elsewhere before reception can call back the next morning.</p>
             </div>
             <div class="star-card !p-7">
-              <h3 class="text-[17px] font-bold text-[#0a0e27] mb-2">What we would install</h3>
+              <h3 class="text-[17px] font-bold text-[#0a0e27] mb-2">What We Would Install:</h3>
               <p class="text-[16px] text-[#64748b] leading-relaxed">StarBot is trained on the clinic's treatments, prices, opening hours and FAQs, then connected to its booking calendar. Anything clinical or complex is handed to the team for a callback.</p>
             </div>
             <div class="star-card !p-7">
-              <h3 class="text-[17px] font-bold text-[#0a0e27] mb-2">The projected result</h3>
+              <h3 class="text-[17px] font-bold text-[#0a0e27] mb-2">The Projected Result:</h3>
               <p class="text-[16px] text-[#64748b] leading-relaxed">StarBot would answer patient questions and book consultations automatically, day and night, so reception starts each morning with new bookings already in the diary instead of a backlog of messages to return.</p>
             </div>
           </div>

@@ -26,6 +26,13 @@
     o.fee = fee; o.net = o.gain - fee; o.roi = fee ? Math.round((o.gain - fee) / fee * 100) : 0; return o;
   }
   if (typeof module !== 'undefined') module.exports = { CFG: CFG, compute: compute };
+  var ALL_INPUTS = [['h', 'Hours of manual work per week', 20], ['r', 'Cost per hour ($)', 25], ['lw', 'Leads lost per week', 3], ['val', 'Value of one customer ($)', 1500], ['won', 'Extra customers won per month', 3], ['ns', 'No-shows per month', 10], ['slot', 'Value of one empty slot ($)', 200], ['cut', 'No-show reduction (%)', 60]];
+  function computeAll(v) {
+    var hoursYear = v.h * 52, labour = hoursYear * v.r, lost = v.lw * v.val * 52,
+        leads = v.won * 12 * v.val, noshow = v.ns * v.slot * 12 * v.cut / 100;
+    return { hoursWeek: v.h, hoursYear: hoursYear, labour: labour, lost: lost, leads: leads, noshow: noshow, revenue: leads + noshow };
+  }
+  if (typeof module !== 'undefined') module.exports.computeAll = computeAll;
   if (typeof document === 'undefined') return;
 
   function renderCalc(el) {
@@ -48,7 +55,7 @@
   var PFP = {
     starbot: ['StarBot', '$100 setup + $100/month', '$99/month base + $30 per booked appointment'],
     starlead: ['StarLead', '$1,000 setup + $500/month', '$199/month base + $50 per qualified booked call'],
-    starbook: ['StarBook', '$300 setup + $100/month', 'A lower base fee + a fee per attended appointment, agreed in your written quote'],
+    starbook: ['StarBook', '$300 setup + $100/month', '$50/month base + $5 per confirmed appointment (no-shows excluded)'],
     starmail: ['StarMail', '$500 setup + $300/month', 'A lower base fee + a share of the revenue your email flows recover, agreed in your written quote'],
     starflow: ['StarFlow', '$1,500 setup + $300/month', 'A lower base fee + a share of measured savings after a workflow audit, agreed in your written quote'],
     starads: ['StarAds', '$500/month + 10% of ad spend', '$500/month base + 10% of ad spend, or an agreed share of ROAS above a target'],
@@ -75,6 +82,31 @@
   document.addEventListener('keydown', function (e) {
     var t = e.target; if ((e.key === 'Enter' || e.key === ' ') && t.getAttribute && t.getAttribute('data-pfp')) { e.preventDefault(); modal(t.getAttribute('data-pfp')); }
   });
-  function init() { document.querySelectorAll('.roi-calc').forEach(renderCalc); }
+
+  /* Combined "cost of doing nothing" calculator for the home page (all six systems) */
+  function renderAll(el) {
+    var ins = ALL_INPUTS.map(function (i) { return '<label class="roi-input"><span>' + i[1] + '</span><input type="number" min="0" step="any" data-k="' + i[0] + '" value="' + i[2] + '"></label>'; }).join('');
+    el.innerHTML = '<div class="roi-wrap"><span class="roi-eyebrow">All six systems combined</span><h3 class="text-2xl font-extrabold" style="color:#f8f8f8">Your total hours saved and revenue captured</h3>' +
+      '<div class="roi-grid"><div class="roi-inputs">' + ins + '</div><div class="roi-out"><p class="roi-formula"></p><div class="roi-cards roi-cards-all"></div></div></div>' +
+      '<p class="roi-note">Illustrative maths using the numbers above, which you can change. It is an example, not a promise of results.</p></div>';
+    function upd() {
+      var v = {}; el.querySelectorAll('input').forEach(function (i) { v[i.getAttribute('data-k')] = parseFloat(i.value) || 0; });
+      var o = computeAll(v);
+      el.querySelector('.roi-formula').textContent = v.h + ' hours/week × 52 = ' + Math.round(o.hoursYear).toLocaleString('en-US') + ' hours back every year. ' + v.won + ' extra customers/month × ' + m(v.val) + ' × 12 = ' + m(o.leads) + ', plus ' + m(o.noshow) + ' from fewer no-shows.';
+      var cards = [['hours', 'Total hours saved per year (' + Math.round(o.hoursWeek).toLocaleString('en-US') + ' every week)', Math.round(o.hoursYear).toLocaleString('en-US') + ' hrs'], ['gain', 'Total revenue captured per year', m(o.revenue)], ['gain', 'Labour cost saved per year', m(o.labour)], ['loss', 'Lost per year if nothing changes', m(o.lost)]];
+      el.querySelector('.roi-cards').innerHTML = cards.map(function (x) { return '<div class="roi-card roi-' + x[0] + '"><b>' + x[2] + '</b><span>' + x[1] + '</span></div>'; }).join('');
+    }
+    el.addEventListener('input', upd); upd();
+  }
+
+  /* Standard / Pay-for-Performance pricing toggle */
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-pfp-tab]'); if (!b) return;
+    var wrap = b.closest('.pfp-pricing'); if (!wrap) return;
+    var which = b.getAttribute('data-pfp-tab');
+    wrap.querySelectorAll('[data-pfp-tab]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    wrap.querySelectorAll('[data-pfp-panel]').forEach(function (p) { p.hidden = p.getAttribute('data-pfp-panel') !== which; });
+  });
+  function init() { document.querySelectorAll('.roi-calc').forEach(function (el) { if (el.getAttribute('data-service') === 'all') renderAll(el); else renderCalc(el); }); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
